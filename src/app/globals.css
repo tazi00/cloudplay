@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+:root {
+  --font-rubik: "__Rubik_abc123", "__Rubik_Fallback_abc123";
+  --background: #0b0e0f;
+  --foreground: #fff;
+  --base-white: #b9b9b9;
+  --btn-clr-primary: #00e701;
+}
+
+@theme inline {
+  --font-family-sans: var(--font-rubik), ui-sans-serif, system-ui, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-base-white: var(--base-white);
+  --color-btn-clr-primary: var(--btn-clr-primary);
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0b0e0f;
+    --foreground: #ededed;
+  }
+} */
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-rubik), -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+}
+
+@layer utilities {
+  .container {
+    width: 100%;
+    @media (width >= 40rem) {
+      max-width: 100%;
+    }
+    @media (width >= 48rem) {
+      max-width: 100%;
+    }
+    @media (width >= 64rem) {
+      max-width: 70rem;
+    }
+    @media (width >= 80rem) {
+      max-width: 100rem;
+    }
+    @media (width >= 96rem) {
+      max-width: 100rem;
+    }
+  }
+
+  .antialiased {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .heading-primary {
+    @apply text-[32px] sm:text-[48px]  font-semibold leading-[36px] sm:leading-[80px] text-white;
+  }
+
+  .para-primary {
+    @apply text-[14px] sm:text-[18px] font-normal text-base-white;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-btn-clr-primary border border-transparent text-background font-medium text-[14px] sm:text-[20px] py-2 sm:py-3 px-5 sm:px-6 rounded-[12px] hover:bg-[#22F423] transition active:bg-[#3FFF40] active:border-[#159A15] relative;
+  }
+
+  .btn-primary::before {
+    content: "";
+    @apply absolute -inset-[9px] rounded-[16px];
+    background: transparent;
+    border: 2px solid #22f42238; /* outer border color */
+    z-index: -1; /* so it sits behind the button */
+  }
+
+  .btn-primary::after {
+    content: "";
+    @apply absolute -inset-[16px] rounded-[16px];
+    background: transparent;
+    border: 2px solid #22f4221f; /* outer border color */
+    z-index: -1; /* so it sits behind the button */
+  }
+}
