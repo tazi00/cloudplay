@@ -1,36 +1,731 @@
+import { Menu } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <section>
-      <div className="container mx-auto relative">
-        {" "}
-        <div className="hero-ban  ">
-          <div className="head-text text-center absolute top-[50px] sm:top-[100px] left-0 w-full z-20">
-            <h3 className="heading-primary mb-[8px] sm:mb-0 max-w-[390px] mx-auto sm:max-w-full sm:mx-0 ">
-              Play Instantly. Anywhere.
-            </h3>
-            <p className="para-primary mb-[30px] sm:mb-[30px]">
-              Join early. No downloads. No delay.
-            </p>
-            <button className="btn-primary">Join as Super User</button>
-          </div>
+    <>
+      <header className="md:bg-[#0b0e0fc7] bg-[#191B1F] text-[#B9B9B9] static md:absolute  md:top-[40px] left-2/4 md:-translate-2/4 grid grid-cols-[1fr_32px_1fr_] md:flex items-center  px-[16px] gap-0 md:gap-[16px] z-30 border border-[#0A0A0A] md:rounded-full  h-[56px] md:h-[64px] w-full md:w-[650px]  md:justify-start">
+        <div>
+          <Menu />
+        </div>
+        <div className="logo justify-self-center md:justify-self-start">
           <Image
-            className="w-full  block md:hidden"
-            src="/images/mobile-ban.jpg"
-            alt="herojpg"
-            width={1000}
-            height={500}
-          />
-          <Image
-            className="w-full rounded-3xl hidden md:block"
-            src="/images/new-hero-bg.jpg"
-            alt="herojpg"
-            width={1000}
-            height={500}
+            src="/images/logo.png"
+            alt="logo"
+            width={44}
+            height={44}
+            className="size-[32px] md:[44px]"
           />
         </div>
-      </div>
-    </section>
+        <nav className="me-auto hidden md:block">
+          <ul className="flex items-center gap-[16px] sm:gap-[16px]  text-[16px] sm:text-[16px] font-medium">
+            <li>
+              <Link className="font-normal text-[16px]" href={"/features"}>
+                Features
+              </Link>
+            </li>
+            <li>
+              <Link className="font-normal text-[16px]" href={"/features"}>
+                Platform
+              </Link>
+            </li>
+            <li>
+              <Link className="font-normal text-[16px]" href={"/features"}>
+                Pricing
+              </Link>
+            </li>
+            <li>
+              <Link className="font-normal text-[16px]" href={"/features"}>
+                FAQ
+              </Link>
+            </li>
+          </ul>
+        </nav>
+        <div>
+          <button className="btn-secondary h-[42px] md:flex justify-center items-center hidden  ">
+            Join as Super User
+          </button>
+          <button className="btn-underline block md:hidden max-w-max ms-auto">
+            Join as Super User
+          </button>
+        </div>
+      </header>
+      <section className="mt-0 md:mt-2">
+        <div className="container mx-auto relative">
+          {" "}
+          <div className="hero-ban  ">
+            <div className="head-text text-center absolute top-[50px] sm:top-[100px] left-0 w-full z-20">
+              <h3 className="heading-primary mb-[8px] sm:mb-0 max-w-[390px] mx-auto sm:max-w-full sm:mx-0 ">
+                Play Instantly. Anywhere.
+              </h3>
+              <p className="para-primary mb-[30px] sm:mb-[30px]">
+                Join early. No downloads. No delay.
+              </p>
+              <button className="btn-primary">Join as Super User</button>
+            </div>
+            <Image
+              className="w-full  block md:hidden"
+              src="/images/mobile-ban.jpg"
+              alt="herojpg"
+              width={1000}
+              height={500}
+            />
+            <Image
+              className="w-full rounded-3xl hidden md:block"
+              src="/images/new-hero-bg.jpg"
+              alt="herojpg"
+              width={1000}
+              height={500}
+            />
+          </div>
+        </div>
+      </section>
+      <section className="how_it_works py-[80px]">
+        <div className="max-w-[1120px] mx-auto">
+          <div className="text-center">
+            <h2 className="heading-secondary mb-[8px]">How it works</h2>
+            <p className="para-primary mb-[42px]">
+              Play, create, or work on any device with the power of a full
+              Windows gaming PC in the cloud.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-4 gap-[16px]">
+            <div className="rounded-[16px] p-[2px] bg-gradient-to-b from-[#0EE70120] to-[#0EE70100]">
+              <div className="card text-white relative text-center py-[24px] px-[10px] bg-[linear-gradient(to_bottom,#191B1F,#101215)] rounded-[14px]">
+                <h4 className="text-[16px] font-normal">Step 1</h4>
+
+                <div className="h-[140px] w-[164px] grid place-items-center mx-auto">
+                  <Image
+                    src="/images/cloud.png"
+                    alt="step-1"
+                    width={100}
+                    height={100}
+                    className="block mx-auto"
+                  />
+                </div>
+
+                <p className="text-[14px] font-light text-[#B9B9B9]">
+                  Game lives in the cloud —{" "}
+                  <span className="block"> nothing to install</span>
+                </p>
+                <Image
+                  src="/images/texture.png"
+                  alt="step-1"
+                  width={100}
+                  height={100}
+                  className="block mx-auto invert hue-rotate-15 absolute bottom-0 left-0 rounded-b-[14px] w-full opacity-40"
+                />
+              </div>
+            </div>
+            <div className="rounded-[16px] p-[2px] bg-gradient-to-b from-[#0EE70120] to-[#0EE70100]">
+              <div className="card text-white relative text-center py-[24px] px-[10px] bg-[linear-gradient(to_bottom,#191B1F,#101215)] rounded-[14px]">
+                <h4 className="text-[16px] font-normal">Step 2</h4>
+
+                <div className="h-[140px] w-[164px] grid place-items-center mx-auto">
+                  <Image
+                    src="/images/cloud.png"
+                    alt="step-1"
+                    width={100}
+                    height={100}
+                    className="block mx-auto"
+                  />
+                </div>
+
+                <p className="text-[14px] font-light text-[#B9B9B9]">
+                  You stream the game to your{" "}
+                  <span className="block"> device via internet</span>
+                </p>
+                <Image
+                  src="/images/texture.png"
+                  alt="step-1"
+                  width={100}
+                  height={100}
+                  className="block mx-auto invert hue-rotate-15 absolute bottom-0 left-0 rounded-b-[14px] w-full opacity-40"
+                />
+              </div>
+            </div>
+            <div className="rounded-[16px] p-[2px] bg-gradient-to-b from-[#0EE70120] to-[#0EE70100]">
+              <div className="card text-white relative text-center py-[24px] px-[10px] bg-[linear-gradient(to_bottom,#191B1F,#101215)] rounded-[14px]">
+                <h4 className="text-[16px] font-normal">Step 3</h4>
+
+                <div className="h-[140px] w-[164px] grid place-items-center mx-auto">
+                  <Image
+                    src="/images/cloud.png"
+                    alt="step-1"
+                    width={100}
+                    height={100}
+                    className="block mx-auto"
+                  />
+                </div>
+
+                <p className="text-[14px] font-light text-[#B9B9B9]">
+                  All inputs (touch, gamepad, keyboard) are supported
+                </p>
+                <Image
+                  src="/images/texture.png"
+                  alt="step-1"
+                  width={100}
+                  height={100}
+                  className="block mx-auto invert hue-rotate-15 absolute bottom-0 left-0 rounded-b-[14px] w-full opacity-40"
+                />
+              </div>
+            </div>
+            <div className="rounded-[16px] p-[2px] bg-gradient-to-b from-[#0EE70120] to-[#0EE70100]">
+              <div className="card text-white relative text-center py-[24px] px-[10px] bg-[linear-gradient(to_bottom,#191B1F,#101215)] rounded-[14px]">
+                <h4 className="text-[16px] font-normal">Step 4</h4>
+
+                <div className="h-[140px] w-[164px] grid place-items-center mx-auto">
+                  <Image
+                    src="/images/cloud.png"
+                    alt="step-1"
+                    width={100}
+                    height={100}
+                    className="block mx-auto"
+                  />
+                </div>
+
+                <p className="text-[14px] font-light text-[#B9B9B9]">
+                  Your device doesn’t need to be powerful — we handle the heavy
+                  lifting
+                </p>
+                <Image
+                  src="/images/texture.png"
+                  alt="step-1"
+                  width={100}
+                  height={100}
+                  className="block mx-auto invert hue-rotate-15 absolute bottom-0 left-0 rounded-b-[14px] w-full opacity-40"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="relative">
+        <div className="container mx-auto">
+          <Image
+            src={"/images/platform.jpg"}
+            alt="platform_image"
+            height={100}
+            width={500}
+            className="w-full block rounded-3xl"
+          />
+
+          <div className="text-center absolute w-full top-[50px] left-0">
+            <h2 className="heading-secondary mb-[8px]">
+              Platform & Compatibility
+            </h2>
+            <p className="para-primary mb-[42px]">Works on:</p>
+
+            <div className="flex  justify-between w-[1120px] mx-auto items-center">
+              <div className=" relative px-4 after:content-[''] after:absolute after:top-2/4  after:-translate-2/4 after:-right-8 after:h-[77px] after:w-px after:bg-[#B9B9B930] last:after:hidden">
+                <h4 className="text-[16px] text-[#B9B9B9] font-normal mb-[22px]">
+                  Laptops & PCs
+                </h4>
+                <ul className="flex gap-[30px] items-center">
+                  <li>
+                    <Image
+                      src="/images/windows-icon.png"
+                      alt="platforms"
+                      width={36}
+                      height={36}
+                      className="block mx-auto"
+                    />
+                    <span className="text-[12px] mt-[12px] block text-[#B9B9B9]">
+                      Windows
+                    </span>
+                  </li>
+                  <li>
+                    <Image
+                      src="/images/apple.png"
+                      alt="platforms"
+                      width={29}
+                      height={36}
+                      className="block mx-auto"
+                    />
+                    <span className="text-[12px] mt-[12px] block text-[#B9B9B9]">
+                      MacOS
+                    </span>
+                  </li>
+                  <li>
+                    <Image
+                      src="/images/linux.png"
+                      alt="platforms"
+                      width={36}
+                      height={36}
+                      className="block mx-auto"
+                    />
+                    <span className="text-[12px] mt-[12px] block text-[#B9B9B9]">
+                      Linux
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <div className=" relative px-4 after:content-[''] after:absolute after:top-2/4  after:-translate-2/4 after:-right-8 after:h-[77px] after:w-px after:bg-[#B9B9B930] last:after:hidden">
+                <h4 className="text-[16px] text-[#B9B9B9] font-normal mb-[22px]">
+                  Mobile
+                </h4>
+                <ul className="flex gap-[30px] items-center">
+                  <li>
+                    <Image
+                      src="/images/ios.png"
+                      alt="platforms"
+                      width={36}
+                      height={36}
+                      className="block mx-auto"
+                    />
+                    <span className="text-[12px] mt-[12px] block text-[#B9B9B9]">
+                      iOS
+                    </span>
+                  </li>
+                  <li>
+                    <Image
+                      src="/images/android.png"
+                      alt="platforms"
+                      width={36}
+                      height={36}
+                      className="block mx-auto"
+                    />
+                    <span className="text-[12px] mt-[12px] block text-[#B9B9B9]">
+                      Android
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <div className=" relative px-4 after:content-[''] after:absolute after:top-2/4  after:-translate-2/4 after:-right-8 after:h-[77px] after:w-px after:bg-[#B9B9B930] last:after:hidden">
+                <h4 className="text-[16px] text-[#B9B9B9] font-normal mb-[22px]">
+                  Smart Tvs
+                </h4>
+                <ul className="flex gap-[30px] items-center">
+                  <li>
+                    <Image
+                      src="/images/apple_tv.png"
+                      alt="platforms"
+                      width={36}
+                      height={36}
+                      className="block mx-auto w-auto h-auto"
+                    />
+                    <span className="text-[12px] mt-[12px] block text-[#B9B9B9]">
+                      Apple TV
+                    </span>
+                  </li>
+                  <li>
+                    <Image
+                      src="/images/android_tv.png"
+                      alt="platforms"
+                      width={36}
+                      height={36}
+                      className="block mx-auto w-[80px] h-auto "
+                    />
+                    <span className="text-[12px] mt-[12px] block text-[#B9B9B9]">
+                      Android TV
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <div className=" relative px-4 after:content-[''] after:absolute after:top-2/4  after:-translate-2/4 after:-right-8 after:h-[77px] after:w-px after:bg-[#B9B9B930] last:after:hidden">
+                <h4 className="text-[16px] text-[#B9B9B9] font-normal mb-[22px]">
+                  Tablets
+                </h4>
+                <ul className="flex gap-[30px] items-center ">
+                  <li>
+                    <Image
+                      src="/images/ios.png"
+                      alt="platforms"
+                      width={42}
+                      height={36}
+                      className="block mx-auto"
+                    />
+                    <span className="text-[12px] mt-[12px] block text-[#B9B9B9]">
+                      iOS
+                    </span>
+                  </li>
+                  <li>
+                    <Image
+                      src="/images/android.png"
+                      alt="platforms"
+                      width={40}
+                      height={36}
+                      className="block mx-auto"
+                    />
+                    <span className="text-[12px] mt-[12px] block text-[#B9B9B9]">
+                      Android
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <div className="  ">
+                <h4 className="text-[16px] text-[#B9B9B9] font-normal mb-[22px]">
+                  Handhelds
+                </h4>
+                <ul className="flex gap-[30px] items-center">
+                  <li>
+                    <Image
+                      src="/images/steamdeck.png"
+                      alt="platforms"
+                      width={24}
+                      height={36}
+                      className="block mx-auto"
+                    />
+                    <span className="text-[12px] mt-[12px] block text-[#B9B9B9]">
+                      Steamdeck
+                    </span>
+                  </li>
+                  <li>
+                    <Image
+                      src="/images/PlayStation.png"
+                      alt="platforms"
+                      width={100}
+                      height={36}
+                      className="block mx-auto"
+                    />
+                    <span className="text-[12px] mt-[12px] block text-[#B9B9B9]">
+                      PSP Vita
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="pricing py-[80px]">
+        <div className="max-w-[1006px] mx-auto">
+          <div className="text-center">
+            <h2 className="heading-secondary mb-[8px]">Pricing</h2>
+            <p className="para-primary mb-[42px]">
+              Play, create, or work on any device with the power of a full
+              Windows gaming PC in the cloud.
+            </p>
+
+            <div className="grid grid-cols-3 gap-[24px]">
+              <div className="col p-[24px] bg-[#191B1F] rounded-[16px] ">
+                <h5 className=" max-w-max text-[20px] font-semibold bg-[#131517] text-[#DBDBDB] px-[8px] py-[4pxs] mb-[20px] rounded-[8px]">
+                  BASIC
+                </h5>
+
+                <ul className="space-y-[10px]">
+                  <li className="text-[14px] flex gap-2">
+                    {" "}
+                    <img src="/images/FrameCorners.png" alt="" />
+                    1080p @ 60 FPS streaming
+                  </li>
+                  <li className="text-[14px] flex gap-2">
+                    {" "}
+                    <img src="/images/Clock.png" alt="" />3 hours/day play limit
+                  </li>
+                  <li className="text-[14px] flex gap-2">
+                    {" "}
+                    <img src="/images/CardsThree.png" alt="" />
+                    Limited game libraryg
+                  </li>
+                  <li className="text-[14px] flex gap-2">
+                    {" "}
+                    <img src="/images/CellTower.png" alt="" />
+                    Standard queue priority
+                  </li>
+                  <li className="text-[14px] flex gap-2">
+                    {" "}
+                    <img src="/images/CloudArrowUp.png" alt="" />
+                    Cloud saves{" "}
+                  </li>
+                  <li className="text-[14px] flex gap-2">
+                    {" "}
+                    <img src="/images/Devices.png" alt="" />
+                    Up to 4 devices (concurrent){" "}
+                  </li>
+                  <li className="text-[14px] flex gap-2">
+                    {" "}
+                    <img src="/images/SketchLogo.png" alt="" />
+                    Up to 4 devices (concurrent){" "}
+                  </li>
+                </ul>
+
+                <h4 className=" text-white text-[48px] font-medium flex flex-col gap-2 items-start mt-[100px]">
+                  $0.00{" "}
+                  <span className="text-[#9A9A9A] text-[14px] font-light">
+                    For 30 days
+                  </span>
+                </h4>
+
+                <ul className="flex gap-2 items-center mt-[16px]">
+                  <li className=" border border-[#34363C] rounded-[8px] bg-[#17191D] w-[50px] h-[32px] grid place-items-center">
+                    1
+                  </li>
+                  <li className=" border border-[#34363C] rounded-[8px] bg-[#17191D] w-[50px] h-[32px] grid place-items-center">
+                    7
+                  </li>
+                  <li className=" border border-[#34363C] rounded-[8px] bg-[#17191D] w-[50px] h-[32px] grid place-items-center">
+                    30
+                  </li>
+                  <li className=" border border-[#34363C] rounded-[8px] bg-[#17191D] w-[50px] h-[32px] grid place-items-center">
+                    180
+                  </li>
+                  <li className=" border border-[#34363C] rounded-[8px] bg-[#17191D] w-[50px] h-[32px] grid place-items-center">
+                    365
+                  </li>
+                </ul>
+                <button className="btn-primary mt-[20px] w-full">
+                  Subscribe
+                </button>
+              </div>
+              <div className="col p-[24px] bg-[#191B1F] rounded-[16px] ">
+                <h5 className=" max-w-max text-[20px] font-semibold bg-[#2C2622] text-[#E2894A] px-[8px] py-[4pxs] mb-[20px] rounded-[8px]">
+                  PREMIUM
+                </h5>
+
+                <ul className="space-y-[10px]">
+                  <li className="text-[14px] flex gap-2">
+                    {" "}
+                    <img src="/images/FrameCorners.png" alt="" />
+                    1080p @ 60 FPS streaming
+                  </li>
+                  <li className="text-[14px] flex gap-2">
+                    {" "}
+                    <img src="/images/Clock.png" alt="" />3 hours/day play limit
+                  </li>
+                  <li className="text-[14px] flex gap-2">
+                    {" "}
+                    <img src="/images/CardsThree.png" alt="" />
+                    Limited game libraryg
+                  </li>
+                  <li className="text-[14px] flex gap-2">
+                    {" "}
+                    <img src="/images/CellTower.png" alt="" />
+                    Standard queue priority
+                  </li>
+                  <li className="text-[14px] flex gap-2">
+                    {" "}
+                    <img src="/images/CloudArrowUp.png" alt="" />
+                    Cloud saves{" "}
+                  </li>
+                  <li className="text-[14px] flex gap-2">
+                    {" "}
+                    <img src="/images/Devices.png" alt="" />
+                    Up to 4 devices (concurrent){" "}
+                  </li>
+                  <li className="text-[14px] flex gap-2">
+                    {" "}
+                    <img src="/images/SketchLogo.png" alt="" />
+                    Up to 4 devices (concurrent){" "}
+                  </li>
+                </ul>
+
+                <h4 className=" text-white text-[48px] font-medium flex flex-col gap-2 items-start mt-[100px]">
+                  $0.00{" "}
+                  <span className="text-[#9A9A9A] text-[14px] font-light">
+                    For 30 days
+                  </span>
+                </h4>
+
+                <ul className="flex gap-2 items-center mt-[16px]">
+                  <li className=" border border-[#34363C] rounded-[8px] bg-[#17191D] w-[50px] h-[32px] grid place-items-center">
+                    1
+                  </li>
+                  <li className=" border border-[#34363C] rounded-[8px] bg-[#17191D] w-[50px] h-[32px] grid place-items-center">
+                    7
+                  </li>
+                  <li className=" border border-[#34363C] rounded-[8px] bg-[#17191D] w-[50px] h-[32px] grid place-items-center">
+                    30
+                  </li>
+                  <li className=" border border-[#34363C] rounded-[8px] bg-[#17191D] w-[50px] h-[32px] grid place-items-center">
+                    180
+                  </li>
+                  <li className=" border border-[#34363C] rounded-[8px] bg-[#17191D] w-[50px] h-[32px] grid place-items-center">
+                    365
+                  </li>
+                </ul>
+                <button className="btn-primary mt-[20px] w-full">
+                  Subscribe
+                </button>
+              </div>
+              <div className="col p-[24px]  bg-[linear-gradient(to_bottom,#332E1147,#191B1F)] rounded-[16px] ">
+                <h5 className=" max-w-max text-[20px] font-semibold bg-[#332E11] text-[#FFBC3F] px-[8px] py-[4pxs] mb-[20px] rounded-[8px]">
+                  ULTIMATE
+                </h5>
+
+                <ul className="space-y-[10px]">
+                  <li className="text-[14px] flex gap-2">
+                    {" "}
+                    <img src="/images/FrameCorners.png" alt="" />
+                    1080p @ 60 FPS streaming
+                  </li>
+                  <li className="text-[14px] flex gap-2">
+                    {" "}
+                    <img src="/images/Clock.png" alt="" />3 hours/day play limit
+                  </li>
+                  <li className="text-[14px] flex gap-2">
+                    {" "}
+                    <img src="/images/CardsThree.png" alt="" />
+                    Limited game libraryg
+                  </li>
+                  <li className="text-[14px] flex gap-2">
+                    {" "}
+                    <img src="/images/CellTower.png" alt="" />
+                    Standard queue priority
+                  </li>
+                  <li className="text-[14px] flex gap-2">
+                    {" "}
+                    <img src="/images/CloudArrowUp.png" alt="" />
+                    Cloud saves{" "}
+                  </li>
+                  <li className="text-[14px] flex gap-2">
+                    {" "}
+                    <img src="/images/Devices.png" alt="" />
+                    Up to 4 devices (concurrent){" "}
+                  </li>
+                  <li className="text-[14px] flex gap-2">
+                    {" "}
+                    <img src="/images/SketchLogo.png" alt="" />
+                    Up to 4 devices (concurrent){" "}
+                  </li>
+                </ul>
+
+                <h4 className=" text-white text-[48px] font-medium flex flex-col gap-2 items-start mt-[100px]">
+                  $0.00{" "}
+                  <span className="text-[#9A9A9A] text-[14px] font-light">
+                    For 30 days
+                  </span>
+                </h4>
+
+                <ul className="flex gap-2 items-center mt-[16px]">
+                  <li className=" border border-[#34363C] rounded-[8px] bg-[#17191D] w-[50px] h-[32px] grid place-items-center">
+                    1
+                  </li>
+                  <li className=" border border-[#34363C] rounded-[8px] bg-[#17191D] w-[50px] h-[32px] grid place-items-center">
+                    7
+                  </li>
+                  <li className=" border border-[#34363C] rounded-[8px] bg-[#17191D] w-[50px] h-[32px] grid place-items-center">
+                    30
+                  </li>
+                  <li className=" border border-[#34363C] rounded-[8px] bg-[#17191D] w-[50px] h-[32px] grid place-items-center">
+                    180
+                  </li>
+                  <li className=" border border-[#34363C] rounded-[8px] bg-[#17191D] w-[50px] h-[32px] grid place-items-center">
+                    365
+                  </li>
+                </ul>
+                <button className="btn-primary mt-[20px] w-full">
+                  Subscribe
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="instant ">
+        <div className="container mx-auto relative">
+          <Image
+            src={"/images/footer-bg.png"}
+            alt="platform_image"
+            height={100}
+            width={500}
+            className="w-full block h-[575px] "
+          />
+          <div className=" absolute w-full h-full grid place-items-center top-0 left-0 text-center">
+            <div>
+              <h2 className="heading-secondary mb-[8px]">
+                Play Instantly. Anywhere.
+              </h2>
+              <p className="para-primary mb-[42px]">
+                Join early. No downloads. No delay.
+              </p>
+              <button className="btn-primary">Join as Super User</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer className="relative bg-[#0B0C0E] text-white">
+        {/* Background texture */}
+        <Image
+          src="/images/texture2.png"
+          alt="platform_image"
+          fill
+          className="object-cover opacity-20 pointer-events-none"
+        />
+
+        {/* Content Wrapper */}
+        <div className="relative z-10 max-w-[1140px] mx-auto px-6 py-12 flex flex-col md:flex-row md:justify-between md:items-start gap-10">
+          {/* Left - Logo + Nav */}
+          <div className="flex flex-col gap-6">
+            {/* Logo */}
+            <Image
+              src="/images/logo_full.png"
+              alt="logo"
+              width={160}
+              height={44}
+              className="h-auto w-auto"
+            />
+
+            {/* Nav Links */}
+            <ul className="flex gap-6 text-[#B9B9B9] text-[14px] font-light">
+              <li>
+                <Link href="/features" className="hover:text-white">
+                  Features
+                </Link>
+              </li>
+              <li>
+                <Link href="/platform" className="hover:text-white">
+                  Platform
+                </Link>
+              </li>
+              <li>
+                <Link href="/pricing" className="hover:text-white">
+                  Pricing
+                </Link>
+              </li>
+              <li>
+                <Link href="/faq" className="hover:text-white">
+                  FAQ
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Right - Socials */}
+          <div className="flex gap-5 items-center justify-center md:justify-end">
+            <Link href="#">
+              <Image
+                src="/images/YoutubeLogo.png"
+                alt="youtube"
+                width={24}
+                height={24}
+              />
+            </Link>
+            <Link href="#">
+              <Image
+                src="/images/XLogo.png"
+                alt="twitter"
+                width={24}
+                height={24}
+              />
+            </Link>
+            <Link href="#">
+              <Image
+                src="/images/DiscordLogo.png"
+                alt="discord"
+                width={24}
+                height={24}
+              />
+            </Link>
+            <Link href="#">
+              <Image
+                src="/images/GithubLogo.png"
+                alt="github"
+                width={24}
+                height={24}
+              />
+            </Link>
+          </div>
+        </div>
+
+        {/* Bottom Text */}
+        <div className="relative z-10 border-t border-[#222] text-center text-[#B9B9B9] text-[13px] py-6">
+          © 2024 Cloudplay. All rights reserved.
+        </div>
+      </footer>
+    </>
   );
 }
