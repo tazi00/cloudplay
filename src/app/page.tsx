@@ -212,179 +212,181 @@ export default function Home() {
             className="w-full block rounded-3xl"
           />
 
-          <div className="text-center absolute w-full top-[50px] left-0">
-            <h2 className="heading-secondary mb-[8px]">
-              Platform & Compatibility
-            </h2>
-            <p className="para-primary mb-[42px]">Works on:</p>
-
-            <div className="flex  justify-between w-[1120px] mx-auto items-center">
-              <div className=" relative px-4 after:content-[''] after:absolute after:top-2/4  after:-translate-2/4 after:-right-8 after:h-[77px] after:w-px after:bg-[#B9B9B930] last:after:hidden">
-                <h4 className="text-[16px] text-[#B9B9B9] font-normal mb-[22px]">
-                  Laptops & PCs
-                </h4>
-                <ul className="flex gap-[30px] items-center">
-                  <li>
-                    <Image
-                      src="/images/windows-icon.png"
-                      alt="platforms"
-                      width={36}
-                      height={36}
-                      className="block mx-auto"
-                    />
-                    <span className="text-[12px] mt-[12px] block text-[#B9B9B9]">
-                      Windows
-                    </span>
-                  </li>
-                  <li>
-                    <Image
-                      src="/images/apple.png"
-                      alt="platforms"
-                      width={29}
-                      height={36}
-                      className="block mx-auto"
-                    />
-                    <span className="text-[12px] mt-[12px] block text-[#B9B9B9]">
-                      MacOS
-                    </span>
-                  </li>
-                  <li>
-                    <Image
-                      src="/images/linux.png"
-                      alt="platforms"
-                      width={36}
-                      height={36}
-                      className="block mx-auto"
-                    />
-                    <span className="text-[12px] mt-[12px] block text-[#B9B9B9]">
-                      Linux
-                    </span>
-                  </li>
-                </ul>
-              </div>
-              <div className=" relative px-4 after:content-[''] after:absolute after:top-2/4  after:-translate-2/4 after:-right-8 after:h-[77px] after:w-px after:bg-[#B9B9B930] last:after:hidden">
-                <h4 className="text-[16px] text-[#B9B9B9] font-normal mb-[22px]">
-                  Mobile
-                </h4>
-                <ul className="flex gap-[30px] items-center">
-                  <li>
-                    <Image
-                      src="/images/ios.png"
-                      alt="platforms"
-                      width={36}
-                      height={36}
-                      className="block mx-auto"
-                    />
-                    <span className="text-[12px] mt-[12px] block text-[#B9B9B9]">
-                      iOS
-                    </span>
-                  </li>
-                  <li>
-                    <Image
-                      src="/images/android.png"
-                      alt="platforms"
-                      width={36}
-                      height={36}
-                      className="block mx-auto"
-                    />
-                    <span className="text-[12px] mt-[12px] block text-[#B9B9B9]">
-                      Android
-                    </span>
-                  </li>
-                </ul>
-              </div>
-              <div className=" relative px-4 after:content-[''] after:absolute after:top-2/4  after:-translate-2/4 after:-right-8 after:h-[77px] after:w-px after:bg-[#B9B9B930] last:after:hidden">
-                <h4 className="text-[16px] text-[#B9B9B9] font-normal mb-[22px]">
-                  Smart Tvs
-                </h4>
-                <ul className="flex gap-[30px] items-center">
-                  <li>
-                    <Image
-                      src="/images/apple_tv.png"
-                      alt="platforms"
-                      width={36}
-                      height={36}
-                      className="block mx-auto w-auto h-auto"
-                    />
-                    <span className="text-[12px] mt-[12px] block text-[#B9B9B9]">
-                      Apple TV
-                    </span>
-                  </li>
-                  <li>
-                    <Image
-                      src="/images/android_tv.png"
-                      alt="platforms"
-                      width={36}
-                      height={36}
-                      className="block mx-auto w-[80px] h-auto "
-                    />
-                    <span className="text-[12px] mt-[12px] block text-[#B9B9B9]">
-                      Android TV
-                    </span>
-                  </li>
-                </ul>
-              </div>
-              <div className=" relative px-4 after:content-[''] after:absolute after:top-2/4  after:-translate-2/4 after:-right-8 after:h-[77px] after:w-px after:bg-[#B9B9B930] last:after:hidden">
-                <h4 className="text-[16px] text-[#B9B9B9] font-normal mb-[22px]">
-                  Tablets
-                </h4>
-                <ul className="flex gap-[30px] items-center ">
-                  <li>
-                    <Image
-                      src="/images/ios.png"
-                      alt="platforms"
-                      width={42}
-                      height={36}
-                      className="block mx-auto"
-                    />
-                    <span className="text-[12px] mt-[12px] block text-[#B9B9B9]">
-                      iOS
-                    </span>
-                  </li>
-                  <li>
-                    <Image
-                      src="/images/android.png"
-                      alt="platforms"
-                      width={40}
-                      height={36}
-                      className="block mx-auto"
-                    />
-                    <span className="text-[12px] mt-[12px] block text-[#B9B9B9]">
-                      Android
-                    </span>
-                  </li>
-                </ul>
-              </div>
-              <div className="  ">
-                <h4 className="text-[16px] text-[#B9B9B9] font-normal mb-[22px]">
-                  Handhelds
-                </h4>
-                <ul className="flex gap-[30px] items-center">
-                  <li>
-                    <Image
-                      src="/images/steamdeck.png"
-                      alt="platforms"
-                      width={24}
-                      height={36}
-                      className="block mx-auto"
-                    />
-                    <span className="text-[12px] mt-[12px] block text-[#B9B9B9]">
-                      Steamdeck
-                    </span>
-                  </li>
-                  <li>
-                    <Image
-                      src="/images/PlayStation.png"
-                      alt="platforms"
-                      width={100}
-                      height={36}
-                      className="block mx-auto"
-                    />
-                    <span className="text-[12px] mt-[12px] block text-[#B9B9B9]">
-                      PSP Vita
-                    </span>
-                  </li>
-                </ul>
+          <div className="text-center absolute w-full top-0 left-0 h-full flex justify-center items-center ">
+            <div>
+              {" "}
+              <h2 className="heading-secondary mb-[8px]">
+                Platform & Compatibility
+              </h2>
+              <p className="para-primary mb-[42px]">Works on:</p>
+              <div className="flex  justify-between w-[1120px] mx-auto items-center">
+                <div className=" relative px-4 after:content-[''] after:absolute after:top-2/4  after:-translate-2/4 after:-right-8 after:h-[77px] after:w-px after:bg-[#B9B9B930] last:after:hidden">
+                  <h4 className="text-[16px] text-[#B9B9B9] font-normal mb-[22px]">
+                    Laptops & PCs
+                  </h4>
+                  <ul className="flex gap-[30px] items-center">
+                    <li>
+                      <Image
+                        src="/images/windows-icon.png"
+                        alt="platforms"
+                        width={36}
+                        height={36}
+                        className="block mx-auto"
+                      />
+                      <span className="text-[12px] mt-[12px] block text-[#B9B9B9]">
+                        Windows
+                      </span>
+                    </li>
+                    <li>
+                      <Image
+                        src="/images/apple.png"
+                        alt="platforms"
+                        width={29}
+                        height={36}
+                        className="block mx-auto"
+                      />
+                      <span className="text-[12px] mt-[12px] block text-[#B9B9B9]">
+                        MacOS
+                      </span>
+                    </li>
+                    <li>
+                      <Image
+                        src="/images/linux.png"
+                        alt="platforms"
+                        width={36}
+                        height={36}
+                        className="block mx-auto"
+                      />
+                      <span className="text-[12px] mt-[12px] block text-[#B9B9B9]">
+                        Linux
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+                <div className=" relative px-4 after:content-[''] after:absolute after:top-2/4  after:-translate-2/4 after:-right-8 after:h-[77px] after:w-px after:bg-[#B9B9B930] last:after:hidden">
+                  <h4 className="text-[16px] text-[#B9B9B9] font-normal mb-[22px]">
+                    Mobile
+                  </h4>
+                  <ul className="flex gap-[30px] items-center">
+                    <li>
+                      <Image
+                        src="/images/ios.png"
+                        alt="platforms"
+                        width={36}
+                        height={36}
+                        className="block mx-auto"
+                      />
+                      <span className="text-[12px] mt-[12px] block text-[#B9B9B9]">
+                        iOS
+                      </span>
+                    </li>
+                    <li>
+                      <Image
+                        src="/images/android.png"
+                        alt="platforms"
+                        width={36}
+                        height={36}
+                        className="block mx-auto"
+                      />
+                      <span className="text-[12px] mt-[12px] block text-[#B9B9B9]">
+                        Android
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+                <div className=" relative px-4 after:content-[''] after:absolute after:top-2/4  after:-translate-2/4 after:-right-8 after:h-[77px] after:w-px after:bg-[#B9B9B930] last:after:hidden">
+                  <h4 className="text-[16px] text-[#B9B9B9] font-normal mb-[22px]">
+                    Smart Tvs
+                  </h4>
+                  <ul className="flex gap-[30px] items-center">
+                    <li>
+                      <Image
+                        src="/images/apple_tv.png"
+                        alt="platforms"
+                        width={36}
+                        height={36}
+                        className="block mx-auto w-auto h-auto"
+                      />
+                      <span className="text-[12px] mt-[12px] block text-[#B9B9B9]">
+                        Apple TV
+                      </span>
+                    </li>
+                    <li>
+                      <Image
+                        src="/images/android_tv.png"
+                        alt="platforms"
+                        width={36}
+                        height={36}
+                        className="block mx-auto w-[80px] h-auto "
+                      />
+                      <span className="text-[12px] mt-[12px] block text-[#B9B9B9]">
+                        Android TV
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+                <div className=" relative px-4 after:content-[''] after:absolute after:top-2/4  after:-translate-2/4 after:-right-8 after:h-[77px] after:w-px after:bg-[#B9B9B930] last:after:hidden">
+                  <h4 className="text-[16px] text-[#B9B9B9] font-normal mb-[22px]">
+                    Tablets
+                  </h4>
+                  <ul className="flex gap-[30px] items-center ">
+                    <li>
+                      <Image
+                        src="/images/ios.png"
+                        alt="platforms"
+                        width={42}
+                        height={36}
+                        className="block mx-auto"
+                      />
+                      <span className="text-[12px] mt-[12px] block text-[#B9B9B9]">
+                        iOS
+                      </span>
+                    </li>
+                    <li>
+                      <Image
+                        src="/images/android.png"
+                        alt="platforms"
+                        width={40}
+                        height={36}
+                        className="block mx-auto"
+                      />
+                      <span className="text-[12px] mt-[12px] block text-[#B9B9B9]">
+                        Android
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="  ">
+                  <h4 className="text-[16px] text-[#B9B9B9] font-normal mb-[22px]">
+                    Handhelds
+                  </h4>
+                  <ul className="flex gap-[30px] items-center">
+                    <li>
+                      <Image
+                        src="/images/steamdeck.png"
+                        alt="platforms"
+                        width={24}
+                        height={36}
+                        className="block mx-auto"
+                      />
+                      <span className="text-[12px] mt-[12px] block text-[#B9B9B9]">
+                        Steamdeck
+                      </span>
+                    </li>
+                    <li>
+                      <Image
+                        src="/images/PlayStation.png"
+                        alt="platforms"
+                        width={100}
+                        height={36}
+                        className="block mx-auto"
+                      />
+                      <span className="text-[12px] mt-[12px] block text-[#B9B9B9]">
+                        PSP Vita
+                      </span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -637,19 +639,20 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="relative bg-[#0B0C0E] text-white">
+      <footer className="relative bg-[#0B0C0E] text-white ">
         {/* Background texture */}
         <Image
           src="/images/texture2.png"
           alt="platform_image"
-          fill
-          className="object-cover opacity-20 pointer-events-none"
+          height={242}
+          width={1000}
+          className="object-cover opacity-20 pointer-events-none w-full h-[242px] invert"
         />
 
         {/* Content Wrapper */}
-        <div className="relative z-10 max-w-[1140px] mx-auto px-6 py-12 flex flex-col md:flex-row md:justify-between md:items-start gap-10">
+        <div className="absolute top-0 left-0  z-10 w-full h-full mx-auto  flex flex-col  items-center justify-center ">
           {/* Left - Logo + Nav */}
-          <div className="flex flex-col gap-6">
+          <div className="flex gap-[48px] items-center mb-[60px]">
             {/* Logo */}
             <Image
               src="/images/logo_full.png"
@@ -660,7 +663,7 @@ export default function Home() {
             />
 
             {/* Nav Links */}
-            <ul className="flex gap-6 text-[#B9B9B9] text-[14px] font-light">
+            <ul className="flex gap-[48px] text-[#B9B9B9] text-[14px] font-normal">
               <li>
                 <Link href="/features" className="hover:text-white">
                   Features
@@ -685,10 +688,10 @@ export default function Home() {
           </div>
 
           {/* Right - Socials */}
-          <div className="flex gap-5 items-center justify-center md:justify-end">
+          <div className="flex gap-5 items-center justify-center md:justify-end mb-[20px]">
             <Link href="#">
               <Image
-                src="/images/YoutubeLogo.png"
+                src="/images/LinkedinLogo.png"
                 alt="youtube"
                 width={24}
                 height={24}
@@ -696,7 +699,7 @@ export default function Home() {
             </Link>
             <Link href="#">
               <Image
-                src="/images/XLogo.png"
+                src="/images/DiscordLogo.png"
                 alt="twitter"
                 width={24}
                 height={24}
@@ -704,7 +707,7 @@ export default function Home() {
             </Link>
             <Link href="#">
               <Image
-                src="/images/DiscordLogo.png"
+                src="/images/XLogo.png"
                 alt="discord"
                 width={24}
                 height={24}
@@ -712,18 +715,17 @@ export default function Home() {
             </Link>
             <Link href="#">
               <Image
-                src="/images/GithubLogo.png"
+                src="/images/YoutubeLogo.png"
                 alt="github"
                 width={24}
                 height={24}
               />
             </Link>
           </div>
-        </div>
-
-        {/* Bottom Text */}
-        <div className="relative z-10 border-t border-[#222] text-center text-[#B9B9B9] text-[13px] py-6">
-          © 2024 Cloudplay. All rights reserved.
+          <p className="text-[#B9B9B9] text-[14px] font-light">
+            {" "}
+            © 2024 Cloudplay. All rights reserved.
+          </p>
         </div>
       </footer>
     </>
