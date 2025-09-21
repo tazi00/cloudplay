@@ -1,8 +1,29 @@
-import { Menu } from "lucide-react";
+"use client";
+
+import { ChevronDown, Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+
+const faqs = [
+  {
+    q: "What is CloudPlay",
+    a: "CloudPlay is a Windows gaming PC in the cloud...",
+  },
+  {
+    q: "I have fast internet, why do I still lag or stutter?",
+    a: "Latency can come from...",
+  },
+  { q: "Can I request a new game?", a: "Yes, you can request..." },
+  {
+    q: "I paid but didn’t receive unlimited hours – what next?",
+    a: "Please contact support...",
+  },
+];
 
 export default function Home() {
+  const [open, setOpen] = useState<number | null>(null);
+
   return (
     <>
       <header className="md:bg-[#0b0e0fc7] bg-[#191B1F] text-[#B9B9B9] static md:absolute  md:top-[40px] left-2/4 md:-translate-2/4 grid grid-cols-[1fr_32px_1fr_] md:flex items-center  px-[16px] gap-0 md:gap-[16px] z-30 border border-[#0A0A0A] md:rounded-full  h-[56px] md:h-[64px] w-full md:w-[650px]  md:justify-start">
@@ -389,6 +410,54 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="faq pt-[80px]">
+        <div className="container mx-auto">
+          <div className="text-center mb-[42px]">
+            <h2 className="heading-secondary mb-[8px]">FAQ</h2>
+            <p className="para-primary mb-[42px]">
+              Play, create, or work on any device with the power of a full
+              Windows gaming PC in the cloud.
+            </p>
+          </div>
+
+          <div className="space-y-4 w-[1002px] mx-auto">
+            {faqs.map((item, idx) => (
+              <div
+                key={idx}
+                className={`rounded-md bg-[#161616] text-white overflow-hidden border border-[#191B1F] 
+              transform transition-transform duration-300
+              ${open === idx ? "scale-[1.02] shadow-lg shadow-black/50" : ""}`}
+              >
+                <button
+                  className="flex w-full items-center justify-between px-5 py-4 text-left"
+                  onClick={() => setOpen(open === idx ? null : idx)}
+                >
+                  <span className="text-base">{item.q}</span>
+                  <ChevronDown
+                    className={`h-5 w-5 text-gray-400 transition-transform duration-300 ${
+                      open === idx ? "rotate-360" : "rotate-270"
+                    }`}
+                  />
+                </button>
+                {open === idx && (
+                  <div
+                    className={`px-5 pb-4 text-gray-400 text-sm border-t border-[#191B1F]
+              transition-all duration-300 ease-in-out
+              ${
+                open === idx
+                  ? "max-h-40 opacity-100"
+                  : "max-h-0 opacity-0 overflow-hidden"
+              }`}
+                  >
+                    {item.a}
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
