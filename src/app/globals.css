@@ -97,3 +97,13 @@ body {
     @apply border-b border-white text-white font-medium text-[14px] sm:text-[14px];
   }
 }
+
+/* globals.css ya tailwind.css mein */
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

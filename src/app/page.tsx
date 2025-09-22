@@ -16,7 +16,7 @@ const faqs = [
   },
   { q: "Can I request a new game?", a: "Yes, you can request..." },
   {
-    q: "I paid but didn’t receive unlimited hours – what next?",
+    q: "I paid but didn’t receive unlimited hours what next?",
     a: "Please contact support...",
   },
 ];
@@ -27,7 +27,7 @@ export default function Home() {
   return (
     <>
       <header className="md:bg-[#0b0e0fc7] bg-[#191B1F] text-[#B9B9B9] static md:absolute  md:top-[40px] left-2/4 md:-translate-2/4 grid grid-cols-[1fr_32px_1fr_] md:flex items-center  px-[16px] gap-0 md:gap-[16px] z-30 border border-[#0A0A0A] md:rounded-full  h-[56px] md:h-[64px] w-full md:w-[650px]  md:justify-start">
-        <div>
+        <div className="block md:hidden">
           <Menu />
         </div>
         <div className="logo justify-self-center md:justify-self-start">
@@ -102,32 +102,32 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="how_it_works py-[80px]">
-        <div className="max-w-[1120px] mx-auto">
+      <section className="how_it_works py-[40px] md:py-[80px]">
+        <div className="max-w-[1120px] mx-auto px-[16px]">
           <div className="text-center">
             <h2 className="heading-secondary mb-[8px]">How it works</h2>
-            <p className="para-primary mb-[42px]">
+            <p className="para-primary mb-[24px] md:mb-[42px]">
               Play, create, or work on any device with the power of a full
               Windows gaming PC in the cloud.
             </p>
           </div>
 
-          <div className="grid grid-cols-4 gap-[16px]">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-[16px]">
             <div className="rounded-[16px] p-[2px] bg-gradient-to-b from-[#0EE70120] to-[#0EE70100]">
               <div className="card text-white relative text-center py-[24px] px-[10px] bg-[linear-gradient(to_bottom,#191B1F,#101215)] rounded-[14px]">
                 <h4 className="text-[16px] font-normal">Step 1</h4>
 
-                <div className="h-[140px] w-[164px] grid place-items-center mx-auto">
+                <div className=" h-[90px] w-full md:h-[140px] md:w-[164px] grid place-items-center mx-auto">
                   <Image
                     src="/images/cloud.png"
                     alt="step-1"
                     width={100}
                     height={100}
-                    className="block mx-auto"
+                    className="block mx-auto w-auto h-auto"
                   />
                 </div>
 
-                <p className="text-[14px] font-light text-[#B9B9B9]">
+                <p className="text-[12px] md:text-[14px] font-light text-[#B9B9B9]">
                   Game lives in the cloud —{" "}
                   <span className="block"> nothing to install</span>
                 </p>
@@ -142,21 +142,21 @@ export default function Home() {
             </div>
             <div className="rounded-[16px] p-[2px] bg-gradient-to-b from-[#0EE70120] to-[#0EE70100]">
               <div className="card text-white relative text-center py-[24px] px-[10px] bg-[linear-gradient(to_bottom,#191B1F,#101215)] rounded-[14px]">
-                <h4 className="text-[16px] font-normal">Step 2</h4>
+                <h4 className="text-[16px] font-normal">Step 1</h4>
 
-                <div className="h-[140px] w-[164px] grid place-items-center mx-auto">
+                <div className=" h-[90px] w-full md:h-[140px] md:w-[164px] grid place-items-center mx-auto">
                   <Image
                     src="/images/cloud.png"
                     alt="step-1"
                     width={100}
                     height={100}
-                    className="block mx-auto"
+                    className="block mx-auto w-auto h-auto"
                   />
                 </div>
 
-                <p className="text-[14px] font-light text-[#B9B9B9]">
-                  You stream the game to your{" "}
-                  <span className="block"> device via internet</span>
+                <p className="text-[12px] md:text-[14px] font-light text-[#B9B9B9]">
+                  Game lives in the cloud —{" "}
+                  <span className="block"> nothing to install</span>
                 </p>
                 <Image
                   src="/images/texture.png"
@@ -169,20 +169,21 @@ export default function Home() {
             </div>
             <div className="rounded-[16px] p-[2px] bg-gradient-to-b from-[#0EE70120] to-[#0EE70100]">
               <div className="card text-white relative text-center py-[24px] px-[10px] bg-[linear-gradient(to_bottom,#191B1F,#101215)] rounded-[14px]">
-                <h4 className="text-[16px] font-normal">Step 3</h4>
+                <h4 className="text-[16px] font-normal">Step 1</h4>
 
-                <div className="h-[140px] w-[164px] grid place-items-center mx-auto">
+                <div className=" h-[90px] w-full md:h-[140px] md:w-[164px] grid place-items-center mx-auto">
                   <Image
                     src="/images/cloud.png"
                     alt="step-1"
                     width={100}
                     height={100}
-                    className="block mx-auto"
+                    className="block mx-auto w-auto h-auto"
                   />
                 </div>
 
-                <p className="text-[14px] font-light text-[#B9B9B9]">
-                  All inputs (touch, gamepad, keyboard) are supported
+                <p className="text-[12px] md:text-[14px] font-light text-[#B9B9B9]">
+                  Game lives in the cloud —{" "}
+                  <span className="block"> nothing to install</span>
                 </p>
                 <Image
                   src="/images/texture.png"
@@ -195,21 +196,21 @@ export default function Home() {
             </div>
             <div className="rounded-[16px] p-[2px] bg-gradient-to-b from-[#0EE70120] to-[#0EE70100]">
               <div className="card text-white relative text-center py-[24px] px-[10px] bg-[linear-gradient(to_bottom,#191B1F,#101215)] rounded-[14px]">
-                <h4 className="text-[16px] font-normal">Step 4</h4>
+                <h4 className="text-[16px] font-normal">Step 1</h4>
 
-                <div className="h-[140px] w-[164px] grid place-items-center mx-auto">
+                <div className=" h-[90px] w-full md:h-[140px] md:w-[164px] grid place-items-center mx-auto">
                   <Image
                     src="/images/cloud.png"
                     alt="step-1"
                     width={100}
                     height={100}
-                    className="block mx-auto"
+                    className="block mx-auto w-auto h-auto"
                   />
                 </div>
 
-                <p className="text-[14px] font-light text-[#B9B9B9]">
-                  Your device doesn’t need to be powerful — we handle the heavy
-                  lifting
+                <p className="text-[12px] md:text-[14px] font-light text-[#B9B9B9]">
+                  Game lives in the cloud —{" "}
+                  <span className="block"> nothing to install</span>
                 </p>
                 <Image
                   src="/images/texture.png"
@@ -230,22 +231,22 @@ export default function Home() {
             alt="platform_image"
             height={100}
             width={500}
-            className="w-full block rounded-3xl"
+            className="w-full  rounded-3xl hidden md:block"
           />
 
-          <div className="text-center absolute w-full top-0 left-0 h-full flex justify-center items-center ">
+          <div className="text-center static md:absolute w-full top-0 left-0 h-full flex justify-center items-center ">
             <div>
               {" "}
               <h2 className="heading-secondary mb-[8px]">
                 Platform & Compatibility
               </h2>
-              <p className="para-primary mb-[42px]">Works on:</p>
-              <div className="flex  justify-between w-[1120px] mx-auto items-center">
-                <div className=" relative px-4 after:content-[''] after:absolute after:top-2/4  after:-translate-2/4 after:-right-8 after:h-[77px] after:w-px after:bg-[#B9B9B930] last:after:hidden">
+              <p className="para-primary mb-[28px] md:mb-[42px]">Works on:</p>
+              <div className="grid grid-cols-2 md:flex  gap-y-[42px] md:gap-y-[30px] justify-between w-full md:w-[1120px]  mx-auto items-start md:items-center">
+                <div className=" relative px-4 after:content-[''] md:after:absolute after:top-2/4  after:-translate-2/4 after:-right-8 after:h-[77px] after:w-px after:bg-[#B9B9B930] last:after:hidden">
                   <h4 className="text-[16px] text-[#B9B9B9] font-normal mb-[22px]">
                     Laptops & PCs
                   </h4>
-                  <ul className="flex gap-[30px] items-center">
+                  <ul className="flex  md:flex-row gap-[10px] md:gap-[30px] justify-center md:justify-start items-center">
                     <li>
                       <Image
                         src="/images/windows-icon.png"
@@ -284,11 +285,11 @@ export default function Home() {
                     </li>
                   </ul>
                 </div>
-                <div className=" relative px-4 after:content-[''] after:absolute after:top-2/4  after:-translate-2/4 after:-right-8 after:h-[77px] after:w-px after:bg-[#B9B9B930] last:after:hidden">
+                <div className=" relative px-4 after:content-[''] md:after:absolute after:top-2/4  after:-translate-2/4 after:-right-8 after:h-[77px] after:w-px after:bg-[#B9B9B930] last:after:hidden">
                   <h4 className="text-[16px] text-[#B9B9B9] font-normal mb-[22px]">
                     Mobile
                   </h4>
-                  <ul className="flex gap-[30px] items-center">
+                  <ul className="flex  md:flex-row gap-[10px] md:gap-[30px] justify-center md:justify-start items-center">
                     <li>
                       <Image
                         src="/images/ios.png"
@@ -315,11 +316,11 @@ export default function Home() {
                     </li>
                   </ul>
                 </div>
-                <div className=" relative px-4 after:content-[''] after:absolute after:top-2/4  after:-translate-2/4 after:-right-8 after:h-[77px] after:w-px after:bg-[#B9B9B930] last:after:hidden">
+                <div className=" relative px-4 after:content-[''] md:after:absolute after:top-2/4  after:-translate-2/4 after:-right-8 after:h-[77px] after:w-px after:bg-[#B9B9B930] last:after:hidden">
                   <h4 className="text-[16px] text-[#B9B9B9] font-normal mb-[22px]">
                     Smart Tvs
                   </h4>
-                  <ul className="flex gap-[30px] items-center">
+                  <ul className="flex  md:flex-row gap-[10px] md:gap-[30px] justify-center md:justify-start items-center">
                     <li>
                       <Image
                         src="/images/apple_tv.png"
@@ -346,11 +347,11 @@ export default function Home() {
                     </li>
                   </ul>
                 </div>
-                <div className=" relative px-4 after:content-[''] after:absolute after:top-2/4  after:-translate-2/4 after:-right-8 after:h-[77px] after:w-px after:bg-[#B9B9B930] last:after:hidden">
+                <div className=" relative px-4 after:content-[''] md:after:absolute after:top-2/4  after:-translate-2/4 after:-right-8 after:h-[77px] after:w-px after:bg-[#B9B9B930] last:after:hidden">
                   <h4 className="text-[16px] text-[#B9B9B9] font-normal mb-[22px]">
                     Tablets
                   </h4>
-                  <ul className="flex gap-[30px] items-center ">
+                  <ul className="flex  md:flex-row gap-[10px] md:gap-[30px] justify-center md:justify-start items-center ">
                     <li>
                       <Image
                         src="/images/ios.png"
@@ -377,11 +378,11 @@ export default function Home() {
                     </li>
                   </ul>
                 </div>
-                <div className="  ">
+                <div className="col-span-2">
                   <h4 className="text-[16px] text-[#B9B9B9] font-normal mb-[22px]">
                     Handhelds
                   </h4>
-                  <ul className="flex gap-[30px] items-center">
+                  <ul className="flex  md:flex-row gap-[10px] md:gap-[30px] justify-center md:justify-start items-center">
                     <li>
                       <Image
                         src="/images/steamdeck.png"
@@ -409,34 +410,37 @@ export default function Home() {
                   </ul>
                 </div>
               </div>
+              <span className="text-[12px] mt-[32px]  block md:hidden text-[#B9B9B9]">
+                Supported Inputs: Touch, Mouse, Keyboard, Gamepads
+              </span>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="faq pt-[80px]">
-        <div className="container mx-auto">
-          <div className="text-center mb-[42px]">
+      <section className="faq  pt-[40px] md:pt-[80px]">
+        <div className="container mx-auto px-[16px]">
+          <div className="text-center md:mb-[42px] mb-[16px]">
             <h2 className="heading-secondary mb-[8px]">FAQ</h2>
-            <p className="para-primary mb-[42px]">
+            <p className="para-primary md:mb-[42px] mb-[16px]">
               Play, create, or work on any device with the power of a full
               Windows gaming PC in the cloud.
             </p>
           </div>
 
-          <div className="space-y-4 w-[1002px] mx-auto">
+          <div className="space-y-4 max-w-[1002px] mx-auto">
             {faqs.map((item, idx) => (
               <div
                 key={idx}
-                className={`rounded-md bg-[#161616] text-white overflow-hidden border border-[#191B1F] 
+                className={`rounded-md bg-[#191B1F] text-white overflow-hidden border border-[#191B1F] 
               transform transition-transform duration-300
               ${open === idx ? "scale-[1.02] shadow-lg shadow-black/50" : ""}`}
               >
                 <button
-                  className="flex w-full items-center justify-between px-5 py-4 text-left"
+                  className="flex w-full items-center justify-between px-[12px] py-[17px] md:px-5 md:py-4 text-left"
                   onClick={() => setOpen(open === idx ? null : idx)}
                 >
-                  <span className="text-base">{item.q}</span>
+                  <span className="text-[12px] md:text-base">{item.q}</span>
                   <ChevronDown
                     className={`h-5 w-5 text-gray-400 transition-transform duration-300 ${
                       open === idx ? "rotate-360" : "rotate-270"
@@ -461,17 +465,17 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="pricing py-[80px]">
-        <div className="max-w-[1006px] mx-auto">
+      <section className="pricing md:py-[80px] py-[40px]">
+        <div className="max-w-[1006px] mx-auto px-[16px] []">
           <div className="text-center">
             <h2 className="heading-secondary mb-[8px]">Pricing</h2>
-            <p className="para-primary mb-[42px]">
+            <p className="para-primary mb-[16px] md:mb-[42px]">
               Play, create, or work on any device with the power of a full
               Windows gaming PC in the cloud.
             </p>
 
-            <div className="grid grid-cols-3 gap-[24px]">
-              <div className="col p-[24px] bg-[#191B1F] rounded-[16px] ">
+            <div className=" flex gap-[12px] overflow-x-auto no-scrollbar md:grid md:grid-cols-3 md:gap-[24px] snap-x snap-mandatory ">
+              <div className="col min-w-[290px] md:min-auto p-[18px] md:p-[24px] bg-[#191B1F] rounded-[16px] snap-start">
                 <h5 className=" max-w-max text-[20px] font-semibold bg-[#131517] text-[#DBDBDB] px-[8px] py-[4pxs] mb-[20px] rounded-[8px]">
                   BASIC
                 </h5>
@@ -541,7 +545,7 @@ export default function Home() {
                   Subscribe
                 </button>
               </div>
-              <div className="col p-[24px] bg-[#191B1F] rounded-[16px] ">
+              <div className="col min-w-[290px] md:min-auto p-[18px] md:p-[24px] bg-[#191B1F] rounded-[16px] snap-start">
                 <h5 className=" max-w-max text-[20px] font-semibold bg-[#2C2622] text-[#E2894A] px-[8px] py-[4pxs] mb-[20px] rounded-[8px]">
                   PREMIUM
                 </h5>
@@ -611,7 +615,7 @@ export default function Home() {
                   Subscribe
                 </button>
               </div>
-              <div className="col p-[24px]  bg-[linear-gradient(to_bottom,#332E1147,#191B1F)] rounded-[16px] ">
+              <div className="col min-w-[290px] md:min-auto p-[18px] md:p-[24px]  bg-[linear-gradient(to_bottom,#332E1147,#191B1F)] rounded-[16px] snap-start">
                 <h5 className=" max-w-max text-[20px] font-semibold bg-[#332E11] text-[#FFBC3F] px-[8px] py-[4pxs] mb-[20px] rounded-[8px]">
                   ULTIMATE
                 </h5>
@@ -692,7 +696,7 @@ export default function Home() {
             alt="platform_image"
             height={100}
             width={500}
-            className="w-full block h-[575px] "
+            className="w-full block h-[310px] md:h-[575px] "
           />
           <div className=" absolute w-full h-full grid place-items-center top-0 left-0 text-center">
             <div>
@@ -721,18 +725,18 @@ export default function Home() {
         {/* Content Wrapper */}
         <div className="absolute top-0 left-0  z-10 w-full h-full mx-auto  flex flex-col  items-center justify-center ">
           {/* Left - Logo + Nav */}
-          <div className="flex gap-[48px] items-center mb-[60px]">
+          <div className="flex flex-col md:flex-row gap-[32px] md:gap-[48px] items-center mb-[42px] md:mb-[60px]">
             {/* Logo */}
             <Image
               src="/images/logo_full.png"
               alt="logo"
               width={160}
               height={44}
-              className="h-auto w-auto"
+              className="h-auto w-[130px] md:w-auto"
             />
 
             {/* Nav Links */}
-            <ul className="flex gap-[48px] text-[#B9B9B9] text-[14px] font-normal">
+            <ul className="flex gap-[32px] md:gap-[48px] text-[#B9B9B9] text-[16px] md:text-[14px] font-normal">
               <li>
                 <Link href="/features" className="hover:text-white">
                   Features
@@ -757,7 +761,7 @@ export default function Home() {
           </div>
 
           {/* Right - Socials */}
-          <div className="flex gap-5 items-center justify-center md:justify-end mb-[20px]">
+          <div className="flex gap-[42px] md:gap-5 items-center justify-center md:justify-end mb-[40px] md:mb-[20px]">
             <Link href="#">
               <Image
                 src="/images/LinkedinLogo.png"
