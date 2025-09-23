@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth scroll-pt-[100px]">
       <body className={`${rubik.variable} antialiased relative`}>
         {children}
       </body>

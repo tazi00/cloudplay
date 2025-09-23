@@ -3,7 +3,7 @@
 import { ChevronDown, Cross, Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
 
 const faqs = [
@@ -27,6 +27,7 @@ export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   // simple email validation
   const isValidEmail = (email: string) =>
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -37,9 +38,29 @@ export default function Home() {
     // API call ya kuch bhi kar sakte ho yahan
     setIsModalOpen(false); // close modal on successful submit
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
-      <header className="md:bg-[#0b0e0fc7] bg-[#191B1F] text-[#B9B9B9] relative md:absolute  md:top-[40px] md:left-2/4 md:-translate-2/4 grid grid-cols-[1fr_32px_1fr_] md:flex items-center px-[16px] md:px-[8px]  gap-0 md:gap-[16px] z-150 border border-[#0A0A0A] md:rounded-full  h-[56px] md:h-[64px] w-full md:w-[650px]  md:justify-start">
+      <header
+        className={` fixed  top-0 md:top-[50px] md:left-2/4 md:-translate-2/4 grid grid-cols-[1fr_32px_1fr_] md:flex items-center px-[16px] md:px-[8px]  gap-0 md:gap-[16px] z-150 border border-[#0A0A0A] md:rounded-full  h-[56px] md:h-[64px] w-full md:w-[650px]  md:justify-start ${
+          isScrolled
+            ? "bg-[#191B1F]  md:bg-[#0b0e0f]  text-white shadow-md"
+            : "bg-[#191B1F]  md:bg-[#0b0e0f] text-[#B9B9B9]"
+        }`}
+      >
         <div className="block md:hidden">
           {isSidebarOpen ? (
             <X onClick={() => setIsSidebarOpen(false)} />
@@ -61,7 +82,11 @@ export default function Home() {
     bg-[#191B1F] md:bg-transparent 
     w-[80%] md:w-auto min-h-screen md:min-h-auto
     transition-transform duration-300 ease-in-out
-    ${isSidebarOpen ? "-translate-x-[2px]" : "-translate-x-full"}
+    ${
+      isSidebarOpen
+        ? "-translate-x-[2px] scroll"
+        : "-translate-x-full not-scroll"
+    }
     md:translate-x-0
   `}
         >
@@ -69,7 +94,7 @@ export default function Home() {
             <li className="w-full md:w-auto block md:hidden">
               <Link
                 className="font-normal text-[16px] py-[20px] px-[16px] md:py-0 md:px-0 border-b border-[#222529] md:border-b-0 w-full flex items-center md:inline-block"
-                href={"/features"}
+                href={""}
               >
                 <Image
                   src={"/images/home_icon.png"}
@@ -84,7 +109,7 @@ export default function Home() {
             <li className="w-full md:w-auto">
               <Link
                 className="font-normal text-[16px] py-[20px] px-[16px] md:py-0 md:px-0 border-b border-[#222529] md:border-b-0 w-full flex items-center md:inline-block"
-                href={"/features"}
+                href={"#features"}
               >
                 <Image
                   src={"/images/sparkle_icon.png"}
@@ -99,7 +124,7 @@ export default function Home() {
             <li className="w-full md:w-auto">
               <Link
                 className="font-normal text-[16px] py-[20px] px-[16px] md:py-0 md:px-0 border-b border-[#222529] md:border-b-0 w-full flex items-center md:inline-block"
-                href={"/features"}
+                href={"#platform"}
               >
                 <Image
                   src={"/images/device_icon.png"}
@@ -114,7 +139,7 @@ export default function Home() {
             <li className="w-full md:w-auto">
               <Link
                 className="font-normal text-[16px] py-[20px] px-[16px] md:py-0 md:px-0 border-b border-[#222529] md:border-b-0 w-full flex items-center md:inline-block"
-                href={"/features"}
+                href={"#pricing"}
               >
                 <Image
                   src={"/images/pricing_icon.png"}
@@ -129,7 +154,7 @@ export default function Home() {
             <li className="w-full md:w-auto">
               <Link
                 className="font-normal text-[16px] py-[20px] px-[16px] md:py-0 md:px-0 border-b border-[#222529] md:border-b-0 w-full flex items-center md:inline-block"
-                href={"/features"}
+                href={"#faq"}
               >
                 <Image
                   src={"/images/faq_icon.png"}
@@ -147,7 +172,7 @@ export default function Home() {
         <div className="ms-auto">
           <button
             onClick={() => setIsModalOpen(true)}
-            className="btn-secondary h-[42px] md:flex justify-center items-center hidden  "
+            className="btn-secondary h-[42px] md:flex justify-center leading-[24px] items-center hidden  "
           >
             Join as Super User
           </button>
@@ -159,7 +184,7 @@ export default function Home() {
           </button>
         </div>
       </header>
-      <section className="mt-0 md:mt-2">
+      <section className="mt-[50px] md:mt-2">
         <div className="container mx-auto relative">
           {" "}
           <div className="hero-ban  ">
@@ -261,7 +286,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="how_it_works py-[40px] md:py-[80px]">
+      <section id="features" className="how_it_works py-[40px] md:py-[80px]">
         <div className="max-w-[1120px] mx-auto px-[16px]">
           <div className="text-center">
             <h2 className="heading-secondary mb-[8px]">How it works</h2>
@@ -384,7 +409,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative">
+      <section id="platform" className="relative">
         <div className="container mx-auto">
           <Image
             src={"/images/platform.jpg"}
@@ -707,7 +732,7 @@ export default function Home() {
           />
         </Marquee>
       </section>
-      <section className="pricing md:py-[80px] pt-[40px]">
+      <section id="pricing" className="pricing md:py-[80px] pt-[40px]">
         <div className="max-w-[1006px] mx-auto px-[16px] []">
           <div className="text-center">
             <h2 className="heading-secondary mb-[8px]">Pricing</h2>
@@ -932,7 +957,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="faq  pt-[40px] md:pt-[80px]">
+      <section id="faq" className="faq  pt-[40px] md:pt-[80px]">
         <div className="container mx-auto px-[16px]">
           <div className="text-center md:mb-[42px] mb-[16px]">
             <h2 className="heading-secondary mb-[8px]">FAQ</h2>
@@ -1095,7 +1120,11 @@ export default function Home() {
 
       {isModalOpen && (
         <div className="modal absolute top-0 left-0 w-full h-screen bg-black/50 z-50 grid place-items-center">
-          <div className="modal_body relative z-20 bg-[#0B0E0F]  p-[16px] md:p-[32px]  text-white max-w-[90%] md:max-w-[515px] w-full rounded-[12px] border border-[#272727]">
+          <div
+            className={`modal_body fixed z-20 bg-[#0B0E0F]  p-[16px] md:p-[32px]  text-white max-w-[90%] md:max-w-[515px] w-full rounded-[12px] border border-[#272727] ${
+              !isModalOpen ? "scroll" : "scroll-not"
+            } `}
+          >
             <h3 className="text-[18px] md:text-[22px] font-normal md:font-semibold mb-[10px]">
               Join the waitlist
             </h3>

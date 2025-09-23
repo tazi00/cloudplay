@@ -22,7 +22,9 @@
     --foreground: #ededed;
   }
 } */
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   background: var(--background);
   color: var(--foreground);
@@ -30,9 +32,14 @@ body {
     Roboto, sans-serif;
 }
 
-html:has(nav.fixed) {
+html:has(nav.scroll) {
   overflow: hidden;
 }
+
+html:has(.modal.modal_body.scroll-not) {
+  overflow: hidden;
+}
+
 @layer utilities {
   .container {
     width: 100%;
