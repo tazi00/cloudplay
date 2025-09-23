@@ -39,7 +39,7 @@ export default function Home() {
   };
   return (
     <>
-      <header className="md:bg-[#0b0e0fc7] bg-[#191B1F] text-[#B9B9B9] relative md:absolute  md:top-[40px] md:left-2/4 md:-translate-2/4 grid grid-cols-[1fr_32px_1fr_] md:flex items-center  px-[16px] gap-0 md:gap-[16px] z-150 border border-[#0A0A0A] md:rounded-full  h-[56px] md:h-[64px] w-full md:w-[650px]  md:justify-start">
+      <header className="md:bg-[#0b0e0fc7] bg-[#191B1F] text-[#B9B9B9] relative md:absolute  md:top-[40px] md:left-2/4 md:-translate-2/4 grid grid-cols-[1fr_32px_1fr_] md:flex items-center px-[16px] md:px-[8px]  gap-0 md:gap-[16px] z-150 border border-[#0A0A0A] md:rounded-full  h-[56px] md:h-[64px] w-full md:w-[650px]  md:justify-start">
         <div className="block md:hidden">
           {isSidebarOpen ? (
             <X onClick={() => setIsSidebarOpen(false)} />
@@ -56,93 +56,95 @@ export default function Home() {
             className="size-[32px] md:[44px]"
           />
         </div>
-        {isSidebarOpen && (
-          <nav
-            className={`me-auto absolute top-[50px] bg-[#191B1F] md:bg-transparent w-[80%] md:w-auto min-h-screen md:min-h-auto -left-1 md:static  md:block after:content-[''] md:after:absolute after:top-2/4  after:-translate-2/4 after:-right-8 after:h-[77px] after:w-px after:bg-[#B9B9B930]  ${
-              !isSidebarOpen ? "translate-x-[-100%]" : "translate-x-[0]"
-            } transition-all`}
-          >
-            <ul className="flex flex-col md:flex-row items-start md:items-center md:gap-[16px] sm:gap-[16px]  text-[16px] sm:text-[16px] font-medium">
-              <li className="w-full md:w-auto">
-                <Link
-                  className="font-normal text-[16px] py-[20px] px-[16px] md:py-0 md:px-0 border-b border-[#222529] md:border-b-0 w-full flex items-center md:inline-block"
-                  href={"/features"}
-                >
-                  <Image
-                    src={"/images/home_icon.png"}
-                    alt="home_icon"
-                    width={22}
-                    height={22}
-                    className="inline-block md:hidden me-2 "
-                  />
-                  <span className="mt-0.5">Home</span>
-                </Link>
-              </li>
-              <li className="w-full md:w-auto">
-                <Link
-                  className="font-normal text-[16px] py-[20px] px-[16px] md:py-0 md:px-0 border-b border-[#222529] md:border-b-0 w-full flex items-center md:inline-block"
-                  href={"/features"}
-                >
-                  <Image
-                    src={"/images/sparkle_icon.png"}
-                    alt="home_icon"
-                    width={22}
-                    height={22}
-                    className="inline-block md:hidden me-2 "
-                  />
-                  <span className="mt-0.5">Features</span>
-                </Link>
-              </li>
-              <li className="w-full md:w-auto">
-                <Link
-                  className="font-normal text-[16px] py-[20px] px-[16px] md:py-0 md:px-0 border-b border-[#222529] md:border-b-0 w-full flex items-center md:inline-block"
-                  href={"/features"}
-                >
-                  <Image
-                    src={"/images/device_icon.png"}
-                    alt="home_icon"
-                    width={22}
-                    height={22}
-                    className="inline-block md:hidden me-2 "
-                  />
-                  <span className="mt-0.5">Platform</span>
-                </Link>
-              </li>
-              <li className="w-full md:w-auto">
-                <Link
-                  className="font-normal text-[16px] py-[20px] px-[16px] md:py-0 md:px-0 border-b border-[#222529] md:border-b-0 w-full flex items-center md:inline-block"
-                  href={"/features"}
-                >
-                  <Image
-                    src={"/images/pricing_icon.png"}
-                    alt="home_icon"
-                    width={22}
-                    height={22}
-                    className="inline-block md:hidden me-2 "
-                  />
-                  <span className="mt-0.5">Pricing</span>
-                </Link>
-              </li>
-              <li className="w-full md:w-auto">
-                <Link
-                  className="font-normal text-[16px] py-[20px] px-[16px] md:py-0 md:px-0 border-b border-[#222529] md:border-b-0 w-full flex items-center md:inline-block"
-                  href={"/features"}
-                >
-                  <Image
-                    src={"/images/faq_icon.png"}
-                    alt="home_icon"
-                    width={22}
-                    height={22}
-                    className="inline-block md:hidden me-2 "
-                  />
-                  <span className="mt-0.5">FAQ</span>
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        )}
+        <nav
+          className={`absolute md:static top-[50px] left-0 md:top-auto md:left-auto
+    bg-[#191B1F] md:bg-transparent 
+    w-[80%] md:w-auto min-h-screen md:min-h-auto
+    transition-transform duration-300 ease-in-out
+    ${isSidebarOpen ? "-translate-x-[2px]" : "-translate-x-full"}
+    md:translate-x-0
+  `}
+        >
+          <ul className="flex flex-col md:flex-row items-start md:items-center md:gap-[16px] sm:gap-[16px]  text-[16px] sm:text-[16px] font-medium ">
+            <li className="w-full md:w-auto block md:hidden">
+              <Link
+                className="font-normal text-[16px] py-[20px] px-[16px] md:py-0 md:px-0 border-b border-[#222529] md:border-b-0 w-full flex items-center md:inline-block"
+                href={"/features"}
+              >
+                <Image
+                  src={"/images/home_icon.png"}
+                  alt="home_icon"
+                  width={22}
+                  height={22}
+                  className="inline-block md:hidden me-2 "
+                />
+                <span className="mt-0.5">Home</span>
+              </Link>
+            </li>
+            <li className="w-full md:w-auto">
+              <Link
+                className="font-normal text-[16px] py-[20px] px-[16px] md:py-0 md:px-0 border-b border-[#222529] md:border-b-0 w-full flex items-center md:inline-block"
+                href={"/features"}
+              >
+                <Image
+                  src={"/images/sparkle_icon.png"}
+                  alt="home_icon"
+                  width={22}
+                  height={22}
+                  className="inline-block md:hidden me-2 "
+                />
+                <span className="mt-0.5">Features</span>
+              </Link>
+            </li>
+            <li className="w-full md:w-auto">
+              <Link
+                className="font-normal text-[16px] py-[20px] px-[16px] md:py-0 md:px-0 border-b border-[#222529] md:border-b-0 w-full flex items-center md:inline-block"
+                href={"/features"}
+              >
+                <Image
+                  src={"/images/device_icon.png"}
+                  alt="home_icon"
+                  width={22}
+                  height={22}
+                  className="inline-block md:hidden me-2 "
+                />
+                <span className="mt-0.5">Platform</span>
+              </Link>
+            </li>
+            <li className="w-full md:w-auto">
+              <Link
+                className="font-normal text-[16px] py-[20px] px-[16px] md:py-0 md:px-0 border-b border-[#222529] md:border-b-0 w-full flex items-center md:inline-block"
+                href={"/features"}
+              >
+                <Image
+                  src={"/images/pricing_icon.png"}
+                  alt="home_icon"
+                  width={22}
+                  height={22}
+                  className="inline-block md:hidden me-2 "
+                />
+                <span className="mt-0.5">Pricing</span>
+              </Link>
+            </li>
+            <li className="w-full md:w-auto">
+              <Link
+                className="font-normal text-[16px] py-[20px] px-[16px] md:py-0 md:px-0 border-b border-[#222529] md:border-b-0 w-full flex items-center md:inline-block"
+                href={"/features"}
+              >
+                <Image
+                  src={"/images/faq_icon.png"}
+                  alt="home_icon"
+                  width={22}
+                  height={22}
+                  className="inline-block md:hidden me-2 "
+                />
+                <span className="mt-0.5">FAQ</span>
+              </Link>
+            </li>
+          </ul>
+        </nav>
 
-        <div>
+        <div className="ms-auto">
           <button
             onClick={() => setIsModalOpen(true)}
             className="btn-secondary h-[42px] md:flex justify-center items-center hidden  "
@@ -151,7 +153,7 @@ export default function Home() {
           </button>
           <button
             onClick={() => setIsModalOpen(true)}
-            className="btn-underline block md:hidden max-w-max ms-auto"
+            className="btn-underline block md:hidden max-w-max "
           >
             Join as Super User
           </button>
