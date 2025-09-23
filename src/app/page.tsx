@@ -24,10 +24,22 @@ const faqs = [
 
 export default function Home() {
   const [open, setOpen] = useState<number | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [email, setEmail] = useState("");
 
+  // simple email validation
+  const isValidEmail = (email: string) =>
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!isValidEmail(email)) return;
+    // API call ya kuch bhi kar sakte ho yahan
+    setIsModalOpen(false); // close modal on successful submit
+  };
   return (
     <>
-      <header className="md:bg-[#0b0e0fc7] bg-[#191B1F] text-[#B9B9B9] static md:absolute  md:top-[40px] left-2/4 md:-translate-2/4 grid grid-cols-[1fr_32px_1fr_] md:flex items-center  px-[16px] gap-0 md:gap-[16px] z-30 border border-[#0A0A0A] md:rounded-full  h-[56px] md:h-[64px] w-full md:w-[650px]  md:justify-start">
+      <header className="md:bg-[#0b0e0fc7] bg-[#191B1F] text-[#B9B9B9] relative md:absolute  md:top-[40px] md:left-2/4 md:-translate-2/4 grid grid-cols-[1fr_32px_1fr_] md:flex items-center  px-[16px] gap-0 md:gap-[16px] z-150 border border-[#0A0A0A] md:rounded-full  h-[56px] md:h-[64px] w-full md:w-[650px]  md:justify-start">
         <div className="block md:hidden">
           <Menu />
         </div>
@@ -65,10 +77,16 @@ export default function Home() {
           </ul>
         </nav>
         <div>
-          <button className="btn-secondary h-[42px] md:flex justify-center items-center hidden  ">
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="btn-secondary h-[42px] md:flex justify-center items-center hidden  "
+          >
             Join as Super User
           </button>
-          <button className="btn-underline block md:hidden max-w-max ms-auto">
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="btn-underline block md:hidden max-w-max ms-auto"
+          >
             Join as Super User
           </button>
         </div>
@@ -1006,6 +1024,54 @@ export default function Home() {
           </p>
         </div>
       </footer>
+
+      {isModalOpen && (
+        <div className="modal absolute top-0 left-0 w-full h-screen bg-black/50 z-50 grid place-items-center">
+          <div className="modal_body relative z-20 bg-[#0B0E0F]  p-[16px] md:p-[32px]  text-white max-w-[90%] md:max-w-[515px] w-full rounded-[12px] border border-[#272727]">
+            <h3 className="text-[18px] md:text-[22px] font-normal md:font-semibold mb-[10px]">
+              Join the waitlist
+            </h3>
+            <p className="text-[#B9B9B9] text-[12px] md:text-[18px] font-normal  mb-[32px]">
+              Be the First to Know when we launch. Enter your email to get
+              notified
+            </p>
+            <form
+              onSubmit={handleSubmit}
+              className="grid sm:grid-cols-1 md:grid-cols-[1fr_126px] gap-[12px] items-end"
+            >
+              <label className="gap-[8px] flex flex-col text-[12px] md:text-[18px]">
+                Enter Your Email
+                <input
+                  placeholder="Please enter your email"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="h-[48px] md:h-[56px] email_put bg-[#171717] py-[15px] px-[16px] md:py-[19px] md:px-[12px] text-[#fff] placeholder:text-[#B9B9B9] rounded-[8px] md:rounded-[12px] border border-[#2A2A2A] focus:outline-none focus:ring focus:ring-[#00E70150] focus-visible:outline-none focus-visible:ring focus-visible:ring-[#00E701"
+                />
+              </label>
+
+              <button
+                type="submit"
+                disabled={!isValidEmail(email)}
+                className={`
+             h-[48px] md:h-[56px] text-[18px] md:text-[20px]  py-[14px] md:px-6 md:py-2  rounded-[8px] md:rounded-[12px] font-semibold transition
+              text-[#0B0E0F]
+              bg-[#00E701]
+              disabled:bg-[#424242] disabled:text-[#7E7E7E] disabled:cursor-not-allowed
+              hover:bg-[#22F423]
+              active:bg-[#3FFF40] 
+            `}
+              >
+                Send
+              </button>
+            </form>
+          </div>
+          <div
+            className="modal fixed top-0 left-0 w-full h-screen bg-black/50 grid place-items-center"
+            onClick={() => setIsModalOpen(false)}
+          ></div>
+        </div>
+      )}
     </>
   );
 }

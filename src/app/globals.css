@@ -90,7 +90,7 @@ body {
   }
 
   .btn-secondary {
-    @apply bg-white border border-transparent text-background font-medium text-[14px] md:text-[14px] py-2 md:py-3 px-5 md:px-6 rounded-full relative;
+    @apply bg-white border border-transparent text-background font-medium text-[14px] md:text-[14px] py-2 md:py-3 px-5 md:px-6 rounded-full relative hover:bg-[#DDDDDD] active:bg-[#D7D7D7] transition disabled:bg-[#424242] disabled:text-[#7E7E7E];
   }
 
   .btn-underline {
@@ -144,6 +144,15 @@ section.marque::after {
     #0b0e0f 70%,
     /* 70% solid dark color */ transparent 100%
   );
+}
+
+input.email_put:-webkit-autofill,
+input.email_put:-webkit-autofill:hover,
+input.email_put:-webkit-autofill:focus,
+input.email_put:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px #171717 inset; /* input ka background color */
+  -webkit-text-fill-color: #fff; /* text color */
+  transition: background-color 5000s ease-in-out 0s; /* smooth transition hack */
 }
 
 @keyframes fadeUp {
