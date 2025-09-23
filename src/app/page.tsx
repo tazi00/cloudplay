@@ -58,7 +58,7 @@ export default function Home() {
         </div>
         {isSidebarOpen && (
           <nav
-            className={`me-auto fixed top-[50px] bg-[#191B1F] md:bg-transparent w-[80%] md:w-auto min-h-screen md:min-h-auto left-0 md:static  md:block ${
+            className={`me-auto absolute top-[50px] bg-[#191B1F] md:bg-transparent w-[80%] md:w-auto min-h-screen md:min-h-auto -left-1 md:static  md:block after:content-[''] md:after:absolute after:top-2/4  after:-translate-2/4 after:-right-8 after:h-[77px] after:w-px after:bg-[#B9B9B930]  ${
               !isSidebarOpen ? "translate-x-[-100%]" : "translate-x-[0]"
             } transition-all`}
           >

@@ -30,7 +30,7 @@ body {
     Roboto, sans-serif;
 }
 
-body:has(nav.fixed) {
+html:has(nav.absolute) {
   overflow: hidden;
 }
 @layer utilities {
