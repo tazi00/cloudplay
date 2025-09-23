@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronDown, Menu } from "lucide-react";
+import { ChevronDown, Cross, Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -26,7 +26,7 @@ export default function Home() {
   const [open, setOpen] = useState<number | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [email, setEmail] = useState("");
-
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   // simple email validation
   const isValidEmail = (email: string) =>
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -41,7 +41,11 @@ export default function Home() {
     <>
       <header className="md:bg-[#0b0e0fc7] bg-[#191B1F] text-[#B9B9B9] relative md:absolute  md:top-[40px] md:left-2/4 md:-translate-2/4 grid grid-cols-[1fr_32px_1fr_] md:flex items-center  px-[16px] gap-0 md:gap-[16px] z-150 border border-[#0A0A0A] md:rounded-full  h-[56px] md:h-[64px] w-full md:w-[650px]  md:justify-start">
         <div className="block md:hidden">
-          <Menu />
+          {isSidebarOpen ? (
+            <X onClick={() => setIsSidebarOpen(false)} />
+          ) : (
+            <Menu onClick={() => setIsSidebarOpen(true)} />
+          )}
         </div>
         <div className="logo justify-self-center md:justify-self-start">
           <Image
@@ -52,30 +56,92 @@ export default function Home() {
             className="size-[32px] md:[44px]"
           />
         </div>
-        <nav className="me-auto hidden md:block">
-          <ul className="flex items-center gap-[16px] sm:gap-[16px]  text-[16px] sm:text-[16px] font-medium">
-            <li>
-              <Link className="font-normal text-[16px]" href={"/features"}>
-                Features
-              </Link>
-            </li>
-            <li>
-              <Link className="font-normal text-[16px]" href={"/features"}>
-                Platform
-              </Link>
-            </li>
-            <li>
-              <Link className="font-normal text-[16px]" href={"/features"}>
-                Pricing
-              </Link>
-            </li>
-            <li>
-              <Link className="font-normal text-[16px]" href={"/features"}>
-                FAQ
-              </Link>
-            </li>
-          </ul>
-        </nav>
+        {isSidebarOpen && (
+          <nav
+            className={`me-auto fixed top-[50px] bg-[#191B1F] md:bg-transparent w-[80%] md:w-auto min-h-screen md:min-h-auto left-0 md:static  md:block ${
+              !isSidebarOpen ? "translate-x-[-100%]" : "translate-x-[0]"
+            } transition-all`}
+          >
+            <ul className="flex flex-col md:flex-row items-start md:items-center md:gap-[16px] sm:gap-[16px]  text-[16px] sm:text-[16px] font-medium">
+              <li className="w-full md:w-auto">
+                <Link
+                  className="font-normal text-[16px] py-[20px] px-[16px] md:py-0 md:px-0 border-b border-[#222529] md:border-b-0 w-full flex items-center md:inline-block"
+                  href={"/features"}
+                >
+                  <Image
+                    src={"/images/home_icon.png"}
+                    alt="home_icon"
+                    width={22}
+                    height={22}
+                    className="inline-block md:hidden me-2 "
+                  />
+                  <span className="mt-0.5">Home</span>
+                </Link>
+              </li>
+              <li className="w-full md:w-auto">
+                <Link
+                  className="font-normal text-[16px] py-[20px] px-[16px] md:py-0 md:px-0 border-b border-[#222529] md:border-b-0 w-full flex items-center md:inline-block"
+                  href={"/features"}
+                >
+                  <Image
+                    src={"/images/sparkle_icon.png"}
+                    alt="home_icon"
+                    width={22}
+                    height={22}
+                    className="inline-block md:hidden me-2 "
+                  />
+                  <span className="mt-0.5">Features</span>
+                </Link>
+              </li>
+              <li className="w-full md:w-auto">
+                <Link
+                  className="font-normal text-[16px] py-[20px] px-[16px] md:py-0 md:px-0 border-b border-[#222529] md:border-b-0 w-full flex items-center md:inline-block"
+                  href={"/features"}
+                >
+                  <Image
+                    src={"/images/device_icon.png"}
+                    alt="home_icon"
+                    width={22}
+                    height={22}
+                    className="inline-block md:hidden me-2 "
+                  />
+                  <span className="mt-0.5">Platform</span>
+                </Link>
+              </li>
+              <li className="w-full md:w-auto">
+                <Link
+                  className="font-normal text-[16px] py-[20px] px-[16px] md:py-0 md:px-0 border-b border-[#222529] md:border-b-0 w-full flex items-center md:inline-block"
+                  href={"/features"}
+                >
+                  <Image
+                    src={"/images/pricing_icon.png"}
+                    alt="home_icon"
+                    width={22}
+                    height={22}
+                    className="inline-block md:hidden me-2 "
+                  />
+                  <span className="mt-0.5">Pricing</span>
+                </Link>
+              </li>
+              <li className="w-full md:w-auto">
+                <Link
+                  className="font-normal text-[16px] py-[20px] px-[16px] md:py-0 md:px-0 border-b border-[#222529] md:border-b-0 w-full flex items-center md:inline-block"
+                  href={"/features"}
+                >
+                  <Image
+                    src={"/images/faq_icon.png"}
+                    alt="home_icon"
+                    width={22}
+                    height={22}
+                    className="inline-block md:hidden me-2 "
+                  />
+                  <span className="mt-0.5">FAQ</span>
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        )}
+
         <div>
           <button
             onClick={() => setIsModalOpen(true)}
@@ -339,7 +405,7 @@ export default function Home() {
                     Laptops & PCs
                   </h4>
                   <ul className="flex  md:flex-row gap-[10px] md:gap-[30px] justify-center md:justify-start items-center">
-                    <li>
+                    <li className="w-full md:w-auto">
                       <Image
                         src="/images/windows-icon.png"
                         alt="platforms"

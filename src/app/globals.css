@@ -30,6 +30,9 @@ body {
     Roboto, sans-serif;
 }
 
+body:has(nav.fixed) {
+  overflow: hidden;
+}
 @layer utilities {
   .container {
     width: 100%;
