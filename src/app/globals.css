@@ -58,19 +58,19 @@ body {
 
 @layer utilities {
   .heading-primary {
-    @apply text-[32px] sm:text-[48px]  font-semibold leading-[36px] sm:leading-[80px] text-white;
+    @apply text-[32px] md:text-[48px]  font-semibold leading-[36px] md:leading-[80px] text-white;
   }
   .heading-secondary {
-    @apply text-[24px] sm:text-[32px] font-semibold  text-white;
+    @apply text-[20px] md:text-[32px] font-semibold  text-white;
   }
   .para-primary {
-    @apply text-[14px] sm:text-[18px] font-normal text-base-white;
+    @apply text-[14px] md:text-[18px] font-normal text-base-white;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-btn-clr-primary border border-transparent text-background font-medium text-[14px] sm:text-[20px] py-2 sm:py-3 px-5 sm:px-6 rounded-[12px] hover:bg-[#22F423] transition active:bg-[#3FFF40] active:border-[#159A15] relative;
+    @apply bg-btn-clr-primary border border-transparent text-background font-medium text-[14px] md:text-[20px] py-2 md:py-3 px-5 md:px-6 rounded-[12px] hover:bg-[#22F423] transition active:bg-[#3FFF40] active:border-[#159A15] relative;
   }
 
   .btn-primary::before {
@@ -90,11 +90,11 @@ body {
   }
 
   .btn-secondary {
-    @apply bg-white border border-transparent text-background font-medium text-[14px] sm:text-[14px] py-2 sm:py-3 px-5 sm:px-6 rounded-full relative;
+    @apply bg-white border border-transparent text-background font-medium text-[14px] md:text-[14px] py-2 md:py-3 px-5 md:px-6 rounded-full relative;
   }
 
   .btn-underline {
-    @apply border-b border-white text-white font-medium text-[14px] sm:text-[14px];
+    @apply border-b border-white text-white font-medium text-[14px] md:text-[14px];
   }
 }
 
@@ -106,4 +106,42 @@ body {
 .no-scrollbar {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+section.marque::before,
+section.marque::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 260px; /* kitna dark area chahiye */
+  height: 100%;
+  z-index: 20;
+  pointer-events: none;
+}
+@media (max-width: 768px) {
+  section.marque::before,
+  section.marque::after {
+    width: 0px; /* kitna dark area chahiye */
+  }
+
+  section.marque {
+    overflow: hidden;
+  }
+}
+section.marque::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    #0b0e0f 70%,
+    /* 70% solid dark color */ transparent 100% /* 30% fade */
+  );
+}
+
+section.marque::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    #0b0e0f 70%,
+    /* 70% solid dark color */ transparent 100%
+  );
 }

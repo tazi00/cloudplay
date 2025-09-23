@@ -4,6 +4,7 @@ import { ChevronDown, Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import Marquee from "react-fast-marquee";
 
 const faqs = [
   {
@@ -224,6 +225,137 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* <section className="">
+        <Marquee
+          className="space-x-[16px]"
+          direction="right"
+          autoFill
+          speed={20}
+        >
+          <Image
+            src="/images/game1.jpg"
+            alt="marquee"
+            width={200}
+            height={100}
+            className=" w-auto  rounded-[16px] h-[406px]"
+          />
+          <Image
+            src="/images/game2.jpg"
+            alt="marquee"
+            width={200}
+            height={100}
+            className=" w-auto  rounded-[16px] h-[406px]"
+          />
+          <Image
+            src="/images/game3.jpg"
+            alt="marquee"
+            width={200}
+            height={100}
+            className=" w-auto  rounded-[16px] h-[406px]"
+          />
+        </Marquee>
+        <Marquee className="space-x-[16px]" autoFill speed={20}>
+          <Image
+            src="/images/game4.png"
+            alt="marquee"
+            width={200}
+            height={100}
+            className=" w-auto  rounded-[16px] h-[70px] md:h-[120px] me-[16px]"
+          />
+          <Image
+            src="/images/game5.png"
+            alt="marquee"
+            width={200}
+            height={100}
+            className=" w-auto  rounded-[16px] h-[70px] md:h-[120px] me-[16px]"
+          />
+          <Image
+            src="/images/game6.png"
+            alt="marquee"
+            width={200}
+            height={100}
+            className=" w-auto  rounded-[16px] h-[120px]"
+          />
+          <Image
+            src="/images/game7.png"
+            alt="marquee"
+            width={200}
+            height={100}
+            className=" w-auto  rounded-[16px] h-[120px]"
+          />
+          <Image
+            src="/images/game8.png"
+            alt="marquee"
+            width={200}
+            height={100}
+            className=" w-auto  rounded-[16px] h-[120px]"
+          />
+          <Image
+            src="/images/game9.png"
+            alt="marquee"
+            width={200}
+            height={100}
+            className=" w-auto  rounded-[16px] h-[120px]"
+          />
+          <Image
+            src="/images/game9.png"
+            alt="marquee"
+            width={200}
+            height={100}
+            className=" w-auto  rounded-[16px] h-[120px]"
+          />
+        </Marquee>
+        <Marquee
+          className="space-x-[16px]"
+          direction="right"
+          autoFill
+          speed={20}
+        >
+          <Image
+            src="/images/game11.png"
+            alt="marquee"
+            width={200}
+            height={100}
+            className=" w-auto  rounded-[16px] h-[120px]"
+          />
+          <Image
+            src="/images/game12.png"
+            alt="marquee"
+            width={200}
+            height={100}
+            className=" w-auto  rounded-[16px] h-[120px]"
+          />
+          <Image
+            src="/images/game13.png"
+            alt="marquee"
+            width={200}
+            height={100}
+            className=" w-auto  rounded-[16px] h-[120px]"
+          />
+          <Image
+            src="/images/game14.png"
+            alt="marquee"
+            width={200}
+            height={100}
+            className=" w-auto  rounded-[16px] h-[120px]"
+          />
+          <Image
+            src="/images/game15.png"
+            alt="marquee"
+            width={200}
+            height={100}
+            className=" w-auto  rounded-[16px] h-[120px]"
+          />
+          <Image
+            src="/images/game16.png"
+            alt="marquee"
+            width={200}
+            height={100}
+            className=" w-auto  rounded-[16px] h-[120px]"
+          />
+        </Marquee>
+      </section> */}
       <section className="relative">
         <div className="container mx-auto">
           <Image
@@ -418,54 +550,136 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="faq  pt-[40px] md:pt-[80px]">
-        <div className="container mx-auto px-[16px]">
-          <div className="text-center md:mb-[42px] mb-[16px]">
-            <h2 className="heading-secondary mb-[8px]">FAQ</h2>
-            <p className="para-primary md:mb-[42px] mb-[16px]">
-              Play, create, or work on any device with the power of a full
-              Windows gaming PC in the cloud.
-            </p>
-          </div>
-
-          <div className="space-y-4 max-w-[1002px] mx-auto">
-            {faqs.map((item, idx) => (
-              <div
-                key={idx}
-                className={`rounded-md bg-[#191B1F] text-white overflow-hidden border border-[#191B1F] 
-              transform transition-transform duration-300
-              ${open === idx ? "scale-[1.02] shadow-lg shadow-black/50" : ""}`}
-              >
-                <button
-                  className="flex w-full items-center justify-between px-[12px] py-[17px] md:px-5 md:py-4 text-left"
-                  onClick={() => setOpen(open === idx ? null : idx)}
-                >
-                  <span className="text-[12px] md:text-base">{item.q}</span>
-                  <ChevronDown
-                    className={`h-5 w-5 text-gray-400 transition-transform duration-300 ${
-                      open === idx ? "rotate-360" : "rotate-270"
-                    }`}
-                  />
-                </button>
-                {open === idx && (
-                  <div
-                    className={`px-5 pb-4 text-gray-400 text-sm border-t border-[#191B1F]
-              transition-all duration-300 ease-in-out
-              ${
-                open === idx
-                  ? "max-h-40 opacity-100"
-                  : "max-h-0 opacity-0 overflow-hidden"
-              }`}
-                  >
-                    {item.a}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+      <section className="relative  marque md:pt-[80px] pt-[40px] ">
+        <div className="container mx-auto text-center px-[16px]">
+          <h2 className="heading-secondary mb-[8px]">
+            Discover All The Trending Games
+          </h2>
+          <p className="para-primary mb-[16px] md:mb-[42px] max-w-[310px] md:max-w-full mx-auto">
+            Play, create, or work on any device with the power of a full Windows
+            gaming PC in the cloud.
+          </p>
         </div>
+        <Marquee className="mb-[16px]" direction="right" autoFill speed={20}>
+          <Image
+            src="/images/game1.jpg"
+            alt="marquee"
+            width={200}
+            height={100}
+            className=" w-auto  rounded-[16px]  h-[150px] md:h-[406px] me-[6px] md:me-[16px]"
+          />
+          <Image
+            src="/images/game2.jpg"
+            alt="marquee"
+            width={200}
+            height={100}
+            className=" w-auto  rounded-[16px]  h-[150px] md:h-[406px] me-[6px] md:me-[16px]"
+          />
+          <Image
+            src="/images/game3.jpg"
+            alt="marquee"
+            width={200}
+            height={100}
+            className=" w-auto  rounded-[16px]  h-[150px] md:h-[406px] me-[6px] md:me-[16px]"
+          />
+        </Marquee>
+        <Marquee className="mb-[16px]" autoFill speed={20}>
+          <Image
+            src="/images/game4.png"
+            alt="marquee"
+            width={200}
+            height={100}
+            className=" w-auto  rounded-[16px] h-[70px] md:h-[120px] me-[6px] md:me-[16px]"
+          />
+          <Image
+            src="/images/game5.png"
+            alt="marquee"
+            width={200}
+            height={100}
+            className=" w-auto  rounded-[16px] h-[70px] md:h-[120px] me-[6px] md:me-[16px]"
+          />
+          <Image
+            src="/images/game6.png"
+            alt="marquee"
+            width={200}
+            height={100}
+            className=" w-auto  rounded-[16px] h-[70px] md:h-[120px] me-[6px] md:me-[16px]"
+          />
+          <Image
+            src="/images/game7.png"
+            alt="marquee"
+            width={200}
+            height={100}
+            className=" w-auto  rounded-[16px] h-[70px] md:h-[120px] me-[6px] md:me-[16px]"
+          />
+          <Image
+            src="/images/game8.png"
+            alt="marquee"
+            width={200}
+            height={100}
+            className=" w-auto  rounded-[16px] h-[70px] md:h-[120px] me-[6px] md:me-[16px]"
+          />
+          <Image
+            src="/images/game9.png"
+            alt="marquee"
+            width={200}
+            height={100}
+            className=" w-auto  rounded-[16px] h-[70px] md:h-[120px] me-[6px] md:me-[16px]"
+          />
+          <Image
+            src="/images/game9.png"
+            alt="marquee"
+            width={200}
+            height={100}
+            className=" w-auto  rounded-[16px] h-[70px] md:h-[120px] me-[6px] md:me-[16px]"
+          />
+        </Marquee>
+        <Marquee className="" direction="right" autoFill speed={20}>
+          <Image
+            src="/images/game11.png"
+            alt="marquee"
+            width={200}
+            height={100}
+            className=" w-auto  rounded-[16px] h-[70px] md:h-[120px] me-[6px] md:me-[16px]"
+          />
+          <Image
+            src="/images/game12.png"
+            alt="marquee"
+            width={200}
+            height={100}
+            className=" w-auto  rounded-[16px] h-[70px] md:h-[120px] me-[6px] md:me-[16px]"
+          />
+          <Image
+            src="/images/game13.png"
+            alt="marquee"
+            width={200}
+            height={100}
+            className=" w-auto  rounded-[16px] h-[70px] md:h-[120px] me-[6px] md:me-[16px]"
+          />
+          <Image
+            src="/images/game14.png"
+            alt="marquee"
+            width={200}
+            height={100}
+            className=" w-auto  rounded-[16px] h-[70px] md:h-[120px] me-[6px] md:me-[16px]"
+          />
+          <Image
+            src="/images/game15.png"
+            alt="marquee"
+            width={200}
+            height={100}
+            className=" w-auto  rounded-[16px] h-[70px] md:h-[120px] me-[6px] md:me-[16px]"
+          />
+          <Image
+            src="/images/game16.png"
+            alt="marquee"
+            width={200}
+            height={100}
+            className=" w-auto  rounded-[16px] h-[70px] md:h-[120px] me-[6px] md:me-[16px]"
+          />
+        </Marquee>
       </section>
-      <section className="pricing md:py-[80px] py-[40px]">
+      <section className="pricing md:py-[80px] pt-[40px]">
         <div className="max-w-[1006px] mx-auto px-[16px] []">
           <div className="text-center">
             <h2 className="heading-secondary mb-[8px]">Pricing</h2>
@@ -689,21 +903,70 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className="faq  pt-[40px] md:pt-[80px]">
+        <div className="container mx-auto px-[16px]">
+          <div className="text-center md:mb-[42px] mb-[16px]">
+            <h2 className="heading-secondary mb-[8px]">FAQ</h2>
+            <p className="para-primary md:mb-[42px] mb-[16px]">
+              Play, create, or work on any device with the power of a full
+              Windows gaming PC in the cloud.
+            </p>
+          </div>
+
+          <div className="space-y-4 max-w-[1002px] mx-auto">
+            {faqs.map((item, idx) => (
+              <div
+                key={idx}
+                className={`rounded-md bg-[#191B1F] text-white overflow-hidden border border-[#191B1F] 
+              transform transition-transform duration-300
+              ${open === idx ? "scale-[1.02] shadow-lg shadow-black/50" : ""}`}
+              >
+                <button
+                  className="flex w-full items-center justify-between px-[12px] py-[17px] md:px-5 md:py-4 text-left"
+                  onClick={() => setOpen(open === idx ? null : idx)}
+                >
+                  <span className="text-[12px] md:text-base">{item.q}</span>
+                  <ChevronDown
+                    className={`h-5 w-5 text-gray-400 transition-transform duration-300 ${
+                      open === idx ? "rotate-360" : "rotate-270"
+                    }`}
+                  />
+                </button>
+                {open === idx && (
+                  <div
+                    className={`px-5 pb-4 text-gray-400 text-sm border-t border-[#191B1F]
+              transition-all duration-300 ease-in-out
+              ${
+                open === idx
+                  ? "max-h-40 opacity-100"
+                  : "max-h-0 opacity-0 overflow-hidden"
+              }`}
+                  >
+                    {item.a}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="instant ">
-        <div className="container mx-auto relative">
+        <div className="container mx-auto relative after:content-[''] after:absolute after:top-0  after:right-0 after:h-full after:w-full after:bg-gradient-to-b after:from-[#0B0E0F] after:to-[#0B0E0F00]">
           <Image
             src={"/images/footer-bg.png"}
             alt="platform_image"
-            height={100}
+            height={1199}
             width={500}
-            className="w-full block h-[310px] md:h-[575px] "
+            className="w-[1200px] mx-auto block h-[310px] md:h-[500px] object-cover"
           />
-          <div className=" absolute w-full h-full grid place-items-center top-0 left-0 text-center">
+          <div className=" absolute z-30 w-full h-full grid place-items-center top-0 left-0 text-center">
             <div>
-              <h2 className="heading-secondary mb-[8px]">
+              <h2 className="text-[32px] sm:text-[48px]  font-semibold leading-[36px] sm:leading-[80px]  mb-[8px] w-[228px] md:w-full mx-auto bg-gradient-to-r from-gray-100/5 via-gray-200 to-gray-100/5  inline-block text-transparent bg-clip-text md:text-white">
                 Play Instantly. Anywhere.
               </h2>
-              <p className="para-primary mb-[42px]">
+              <p className="para-primary md:mb-[42px] mb-7">
                 Join early. No downloads. No delay.
               </p>
               <button className="btn-primary">Join as Super User</button>
