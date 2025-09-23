@@ -438,7 +438,7 @@ export default function Home() {
                         alt="platforms"
                         width={36}
                         height={36}
-                        className="block mx-auto"
+                        className="block mx-auto w-[26px] md:w-[36px]"
                       />
                       <span className="text-[12px] mt-[12px] block text-[#B9B9B9]">
                         Windows
@@ -450,7 +450,7 @@ export default function Home() {
                         alt="platforms"
                         width={29}
                         height={36}
-                        className="block mx-auto"
+                        className="block mx-auto w-[24px] md:w-[30px]"
                       />
                       <span className="text-[12px] mt-[12px] block text-[#B9B9B9]">
                         MacOS
@@ -541,7 +541,7 @@ export default function Home() {
                       <Image
                         src="/images/ios.png"
                         alt="platforms"
-                        width={42}
+                        width={36}
                         height={36}
                         className="block mx-auto"
                       />
@@ -553,7 +553,7 @@ export default function Home() {
                       <Image
                         src="/images/android.png"
                         alt="platforms"
-                        width={40}
+                        width={36}
                         height={36}
                         className="block mx-auto"
                       />
