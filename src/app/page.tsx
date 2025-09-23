@@ -93,13 +93,85 @@ export default function Home() {
               width={1000}
               height={500}
             />
-            <Image
-              className="w-full rounded-3xl hidden md:block"
-              src="/images/new-hero-bg.jpg"
-              alt="herojpg"
-              width={1000}
-              height={500}
-            />
+            <div className="relative overflow-hidden">
+              <Image
+                className="w-full rounded-3xl hidden md:block"
+                src="/images/hero-ban.png"
+                alt="herojpg"
+                width={1000}
+                height={500}
+              />
+              <Image
+                className="w-[960px]  rounded-3xl hidden md:block absolute bottom-0 left-2/4 -translate-x-2/4 translate-y-[200px] fade-up z-10"
+                src="/images/pc.png"
+                alt="herojpg"
+                width={960}
+                height={500}
+              />
+              <div className="absolute -bottom-15  left-2/4 -translate-x-2/4 max-w-[1200px] flex justify-between w-full items-end">
+                <div className="relative w-[310px] h-[432px]">
+                  <Image
+                    className="w-[150px] h-[216px] absolute left-0 translate-x-[60px] translate-y-[-25px] bottom-30 animate-slide-rotate-left-mirror z-10"
+                    src="/images/Elliot.png"
+                    alt="herojpg"
+                    width={130}
+                    height={216}
+                  />
+                  <Image
+                    className="w-[160px] h-[216px] absolute left-0 translate-x-[-140px] translate-y-[35px] bottom-50 animate-slide-rotate-anti-mirror"
+                    src="/images/musha.png"
+                    alt="herojpg"
+                    width={130}
+                    height={216}
+                  />
+                  <Image
+                    className="w-[130px] h-[216px] absolute left-0 translate-x-[50px] bottom-0 animate-fade-slide-overshoot-mirror z-10"
+                    src="/images/prag.png"
+                    alt="herojpg"
+                    width={130}
+                    height={216}
+                  />
+                  <Image
+                    className="w-[160px] h-[216px] absolute left-0 translate-x-[-180px] translate-y-[30px] bottom-6 animate-fade-slide-overshoot-mirror2"
+                    src="/images/animo.png"
+                    alt="herojpg"
+                    width={130}
+                    height={216}
+                  />
+                </div>
+
+                <div className="relative w-[310px] h-[432px]">
+                  <Image
+                    className="w-[130px] h-[216px] absolute right-0 rotate-[0deg] translate-x-[-25px]  translate-y-[-25px] bottom-40 animate-slide-rotate-left z-10  "
+                    src="/images/mafia.png"
+                    alt="herojpg"
+                    width={130}
+                    height={216}
+                  />
+                  <Image
+                    className="w-[160px] h-[216px] absolute right-0 rotate-[0deg] translate-x-[80px]  translate-y-[35px] bottom-40  animate-slide-rotate-anti   "
+                    src="/images/evil1.png"
+                    alt="herojpg"
+                    width={130}
+                    height={216}
+                  />
+                  <Image
+                    className="w-[130px] h-[216px] absolute right-0 translate-x-[-10px] bottom-0 animate-fade-slide-overshoot z-10"
+                    src="/images/uma.png"
+                    alt="herojpg"
+                    width={130}
+                    height={216}
+                  />
+                  <Image
+                    className="w-[160px] h-[216px] absolute right-0 translate-x-[100px] translate-y-[30px] bottom-0 animate-fade-slide-overshoot2"
+                    src="/images/reson.png"
+                    alt="herojpg"
+                    width={130}
+                    height={216}
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -143,11 +215,11 @@ export default function Home() {
             </div>
             <div className="rounded-[16px] p-[2px] bg-gradient-to-b from-[#0EE70120] to-[#0EE70100]">
               <div className="card text-white relative text-center py-[24px] px-[10px] bg-[linear-gradient(to_bottom,#191B1F,#101215)] rounded-[14px]">
-                <h4 className="text-[16px] font-normal">Step 1</h4>
+                <h4 className="text-[16px] font-normal">Step 2</h4>
 
                 <div className=" h-[90px] w-full md:h-[140px] md:w-[164px] grid place-items-center mx-auto">
                   <Image
-                    src="/images/cloud.png"
+                    src="/images/wifi.png"
                     alt="step-1"
                     width={100}
                     height={100}
@@ -170,11 +242,11 @@ export default function Home() {
             </div>
             <div className="rounded-[16px] p-[2px] bg-gradient-to-b from-[#0EE70120] to-[#0EE70100]">
               <div className="card text-white relative text-center py-[24px] px-[10px] bg-[linear-gradient(to_bottom,#191B1F,#101215)] rounded-[14px]">
-                <h4 className="text-[16px] font-normal">Step 1</h4>
+                <h4 className="text-[16px] font-normal">Step 3</h4>
 
                 <div className=" h-[90px] w-full md:h-[140px] md:w-[164px] grid place-items-center mx-auto">
                   <Image
-                    src="/images/cloud.png"
+                    src="/images/game.png"
                     alt="step-1"
                     width={100}
                     height={100}
@@ -197,11 +269,11 @@ export default function Home() {
             </div>
             <div className="rounded-[16px] p-[2px] bg-gradient-to-b from-[#0EE70120] to-[#0EE70100]">
               <div className="card text-white relative text-center py-[24px] px-[10px] bg-[linear-gradient(to_bottom,#191B1F,#101215)] rounded-[14px]">
-                <h4 className="text-[16px] font-normal">Step 1</h4>
+                <h4 className="text-[16px] font-normal">Step 4</h4>
 
                 <div className=" h-[90px] w-full md:h-[140px] md:w-[164px] grid place-items-center mx-auto">
                   <Image
-                    src="/images/cloud.png"
+                    src="/images/computer.png"
                     alt="step-1"
                     width={100}
                     height={100}
@@ -226,136 +298,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* <section className="">
-        <Marquee
-          className="space-x-[16px]"
-          direction="right"
-          autoFill
-          speed={20}
-        >
-          <Image
-            src="/images/game1.jpg"
-            alt="marquee"
-            width={200}
-            height={100}
-            className=" w-auto  rounded-[16px] h-[406px]"
-          />
-          <Image
-            src="/images/game2.jpg"
-            alt="marquee"
-            width={200}
-            height={100}
-            className=" w-auto  rounded-[16px] h-[406px]"
-          />
-          <Image
-            src="/images/game3.jpg"
-            alt="marquee"
-            width={200}
-            height={100}
-            className=" w-auto  rounded-[16px] h-[406px]"
-          />
-        </Marquee>
-        <Marquee className="space-x-[16px]" autoFill speed={20}>
-          <Image
-            src="/images/game4.png"
-            alt="marquee"
-            width={200}
-            height={100}
-            className=" w-auto  rounded-[16px] h-[70px] md:h-[120px] me-[16px]"
-          />
-          <Image
-            src="/images/game5.png"
-            alt="marquee"
-            width={200}
-            height={100}
-            className=" w-auto  rounded-[16px] h-[70px] md:h-[120px] me-[16px]"
-          />
-          <Image
-            src="/images/game6.png"
-            alt="marquee"
-            width={200}
-            height={100}
-            className=" w-auto  rounded-[16px] h-[120px]"
-          />
-          <Image
-            src="/images/game7.png"
-            alt="marquee"
-            width={200}
-            height={100}
-            className=" w-auto  rounded-[16px] h-[120px]"
-          />
-          <Image
-            src="/images/game8.png"
-            alt="marquee"
-            width={200}
-            height={100}
-            className=" w-auto  rounded-[16px] h-[120px]"
-          />
-          <Image
-            src="/images/game9.png"
-            alt="marquee"
-            width={200}
-            height={100}
-            className=" w-auto  rounded-[16px] h-[120px]"
-          />
-          <Image
-            src="/images/game9.png"
-            alt="marquee"
-            width={200}
-            height={100}
-            className=" w-auto  rounded-[16px] h-[120px]"
-          />
-        </Marquee>
-        <Marquee
-          className="space-x-[16px]"
-          direction="right"
-          autoFill
-          speed={20}
-        >
-          <Image
-            src="/images/game11.png"
-            alt="marquee"
-            width={200}
-            height={100}
-            className=" w-auto  rounded-[16px] h-[120px]"
-          />
-          <Image
-            src="/images/game12.png"
-            alt="marquee"
-            width={200}
-            height={100}
-            className=" w-auto  rounded-[16px] h-[120px]"
-          />
-          <Image
-            src="/images/game13.png"
-            alt="marquee"
-            width={200}
-            height={100}
-            className=" w-auto  rounded-[16px] h-[120px]"
-          />
-          <Image
-            src="/images/game14.png"
-            alt="marquee"
-            width={200}
-            height={100}
-            className=" w-auto  rounded-[16px] h-[120px]"
-          />
-          <Image
-            src="/images/game15.png"
-            alt="marquee"
-            width={200}
-            height={100}
-            className=" w-auto  rounded-[16px] h-[120px]"
-          />
-          <Image
-            src="/images/game16.png"
-            alt="marquee"
-            width={200}
-            height={100}
-            className=" w-auto  rounded-[16px] h-[120px]"
-          />
-        </Marquee>
-      </section> */}
       <section className="relative">
         <div className="container mx-auto">
           <Image

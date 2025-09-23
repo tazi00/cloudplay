@@ -145,3 +145,164 @@ section.marque::after {
     /* 70% solid dark color */ transparent 100%
   );
 }
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  20% {
+    /* yaha tak wait karega */
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideRotateInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(100px) translateY(100px) rotate(30deg); /* start right + tilted */
+  }
+  20% {
+    opacity: 0;
+    transform: translateX(100px) translateY(100px) rotate(30deg); /* start right + tilted */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) translateY(0) rotate(-2deg); /* apni jagah, straight */
+  }
+}
+
+@keyframes slideRotateInAnti {
+  0% {
+    opacity: 0;
+    transform: translateX(100px) translateY(100px) rotate(30deg);
+  }
+  20% {
+    opacity: 0;
+    transform: translateX(100px) translateY(100px) rotate(30deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes fadeSlideInOvershoot {
+  0% {
+    opacity: 0;
+    transform: translateX(60px); /* start left */
+  }
+  30% {
+    opacity: 0;
+    transform: translateX(60px); /* overshoot right */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-10px); /* settle at final */
+  }
+}
+
+.animate-fade-slide-overshoot {
+  animation: fadeSlideInOvershoot 1s ease-in-out forwards;
+}
+
+.animate-fade-slide-overshoot2 {
+  animation: fadeSlideInOvershoot 1.5s ease-in-out forwards;
+}
+
+.animate-slide-rotate-left {
+  animation: slideRotateInLeft 1.3s ease-in-out forwards;
+}
+
+.animate-slide-rotate-anti {
+  animation: slideRotateInAnti 1.5s ease-out forwards;
+}
+
+.fade-up {
+  animation: fadeUp 1s ease-out forwards;
+}
+
+/* Mafia: Slide + Rotate (Left to Right mirror) */
+@keyframes slideRotateInLeftMirror {
+  0% {
+    opacity: 0;
+    transform: translateX(-150px) translateY(-25px) rotate(-25deg);
+  }
+  20% {
+    opacity: 0;
+    transform: translateX(-150px) translateY(-35px) rotate(-25deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-25px) translateY(-25px) rotate(0deg);
+  }
+}
+
+/* Evil: Slide + Rotate Anti (Left to Right mirror) */
+@keyframes slideRotateInAntiMirror {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px) translateY(35px) rotate(-30deg);
+  }
+  20% {
+    opacity: 0;
+    transform: translateX(-100px) translateY(35px) rotate(-30deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(80px) translateY(35px) rotate(0deg);
+  }
+}
+
+/* Uma: Fade + Slide Overshoot (Left to Right mirror) */
+@keyframes fadeSlideInOvershootMirror {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  30% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-20px);
+  }
+}
+
+/* Reson: Fade + Slide Overshoot2 (Left to Right mirror) */
+@keyframes fadeSlideInOvershootMirror2 {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px) translateY(30px);
+  }
+  30% {
+    opacity: 0;
+    transform: translateX(-100px) translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(100px) translateY(30px);
+  }
+}
+
+.animate-slide-rotate-left-mirror {
+  animation: slideRotateInLeftMirror 1.3s ease-in-out forwards;
+}
+
+.animate-slide-rotate-anti-mirror {
+  animation: slideRotateInAntiMirror 1.5s ease-out forwards;
+}
+
+.animate-fade-slide-overshoot-mirror {
+  animation: fadeSlideInOvershootMirror 1s ease-in-out forwards;
+}
+
+.animate-fade-slide-overshoot-mirror2 {
+  animation: fadeSlideInOvershootMirror2 1.5s ease-in-out forwards;
+}
